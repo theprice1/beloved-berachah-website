@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Linter Fix: Standard viewport (the CSS will handle the A4 width) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Trauma PDF</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Path Fix: Adjusted to reach the root CSS folder from assets/resources/ -->
+    <link rel="stylesheet" href="../../css/style.css" />
+      
+    <style>
+      @page { size: A4; margin: 0; }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f1f5f9; 
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .font-serif { font-family: "Playfair Display", serif; }
+      
+      .a4-paper {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 2rem auto;
+        background: white;
+        padding: 25mm 20mm;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      }
+
+      @media print {
+        body { background-color: white; }
+        /* Linter Fix: Changed auto to 0 to support older browsers */
+        .a4-paper { margin: 0; box-shadow: none; min-height: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a4-paper flex flex-col relative">
+      
+      <!-- HEADER -->
+      <header class="flex justify-between items-start border-b-2 border-amber-500 pb-6 mb-10 shrink-0">
+        <div class="flex items-center gap-4">
+          <!-- Path Fix: Adjusted to reach the images folder -->
+          <img src="../images/BB.png" alt="Beloved Berachah Logo" class="w-16 h-16 object-contain" />
+          <div>
+            <h1 class="font-serif text-2xl font-semibold text-slate-900 tracking-tight">Beloved Berachah CIC</h1>
+            <p class="text-amber-600 text-xs font-semibold uppercase tracking-widest mt-1">Free Resource Guide</p>
+          </div>
+        </div>
+        <div class="text-right text-slate-500 text-sm font-light">
+          <p>hello@belovedberachah.org</p>
+          <p>www.belovedberachah.org</p>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="grow prose prose-slate prose-p:font-light prose-h2:font-serif prose-h2:text-3xl prose-h2:text-slate-900 prose-h3:font-serif prose-h3:text-xl max-w-none">
+        
+        <h2 class="text-center mb-8">Understanding Trauma: A Brief Guide</h2>
+        
+        <p>Trauma is the lasting emotional response that often results from living through a distressing event. This guide helps community leaders recognize trauma and respond with compassion.</p>
+        
+        <h3>The Brain's Response</h3>
+        <p>When an individual experiences trauma, the brain's alarm system takes over. This often results in three automatic responses:</p>
+        <ul>
+          <li><strong>Fight:</strong> Aggression, defensiveness, or hyper-vigilance.</li>
+          <li><strong>Flight:</strong> Avoidance, fleeing a situation, or extreme anxiety.</li>
+          <li><strong>Freeze:</strong> Numbing out, disconnecting, or inability to make decisions.</li>
+        </ul>
+
+        <h3>Core Principles of Trauma-Informed Support</h3>
+        <ul>
+          <li><strong>Safety:</strong> Ensuring physical and emotional safety is the top priority.</li>
+          <li><strong>Trustworthiness:</strong> Maintaining clear boundaries and consistency.</li>
+          <li><strong>Choice:</strong> Returning a sense of control to the individual.</li>
+          <li><strong>Collaboration:</strong> Making decisions <em>with</em> them, not <em>for</em> them.</li>
+        </ul>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-400 shrink-0">
+        <p>This document is provided for educational purposes by Beloved Berachah CIC. Company No: 16685295</p>
+      </footer>
+      
+    </div>
+  </body>
+</html>
