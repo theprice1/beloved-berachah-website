@@ -42,10 +42,10 @@
         </a>
         <div class="hidden md:flex space-x-8 font-medium items-center">
           <a href="index.html" class="hover:text-amber-600 transition">Home</a>
-          <a href="about.html" class="text-amber-600 transition">About Us</a>
+          <a href="about.html" class="text-amber-600 transition" aria-current="page">About Us</a>
           <a href="services.html" class="hover:text-amber-600 transition">Services & Workshops</a>
           <a href="resources.html" class="hover:text-amber-600 transition">Resources</a>
-          <a href="contact.html" class="text-amber-600 transition" aria-current="page">Contact</a>
+          <a href="contact.html" class="hover:text-amber-600 transition">Contact</a>
           
           <a href="https://www.instagram.com/belovedberachah" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-slate-400 hover:text-amber-500 transition-colors">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -139,12 +139,51 @@
               </div>
             </div>
 
-            <!-- Vision Image Container: Set to stretch alongside the text -->
-            <div class="rounded-2xl overflow-hidden shadow-sm relative group h-fullmin-h-100 lg:min-h-150  mt-8 lg:mt-0">
+            <!-- Vision Image Container -->
+            <div class="rounded-2xl overflow-hidden shadow-sm relative group h-full min-h-75 lg:min-h-100 mt-8 lg:mt-0">
               <div class="absolute inset-0 bg-amber-500/10 mix-blend-multiply z-10 transition duration-500 group-hover:bg-transparent"></div>
-              <!-- New Working Image of diverse women in a support circle -->
+              <!-- Working Image of diverse women in a support circle -->
               <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Women in a supportive community" class="w-full h-full object-cover absolute inset-0 transform transition duration-700 group-hover:scale-105" />
             </div>
+          </div>
+        </section>
+
+        <!-- The Story Behind Our Name -->
+        <section class="my-24 bg-amber-50 rounded-3xl p-10 md:p-16 border border-amber-100 relative overflow-hidden">
+          
+          <!-- Decorative Background Accent -->
+          <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-200/30 rounded-full blur-3xl"></div>
+          
+          <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-slate-900 mb-6 tracking-tight">The Story Behind Our Name</h2>
+            <div class="w-12 h-1 bg-amber-500 mx-auto mb-8 rounded-full"></div>
+            
+            <p class="text-slate-600 text-lg leading-relaxed font-light mb-12 max-w-2xl mx-auto">
+              Our name brings together two powerful biblical promises: that every woman’s true identity is deeply loved, and that even the darkest valleys of trauma can be transformed into places of restoration and provision.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
+              <!-- Quote 1: Beloved -->
+              <blockquote class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+                <p class="text-xl font-serif text-slate-800 italic leading-relaxed mb-6">
+                  "I will call them 'my people' who are not my people; and I will call her 'my beloved' who is not my beloved."
+                </p>
+                <footer class="text-xs font-semibold text-amber-600 uppercase tracking-widest flex items-center">
+                  <span class="w-4 h-px bg-amber-600 mr-2"></span> Romans 9:25
+                </footer>
+              </blockquote>
+
+              <!-- Quote 2: Berachah -->
+              <blockquote class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+                <p class="text-xl font-serif text-slate-800 italic leading-relaxed mb-6">
+                  "On the fourth day they assembled in the Valley of Berachah, where they blessed the Lord..."
+                </p>
+                <footer class="text-xs font-semibold text-amber-600 uppercase tracking-widest flex items-center">
+                  <span class="w-4 h-px bg-amber-600 mr-2"></span> 2 Chronicles 20:26
+                </footer>
+              </blockquote>
+            </div>
+            
           </div>
         </section>
 
