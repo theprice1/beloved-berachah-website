@@ -2,15 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Linter Fix: Standard viewport (the CSS will handle the A4 width) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Understanding Trauma PDF</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- Path Fix: Adjusted to reach the root CSS folder from assets/resources/ -->
     <link rel="stylesheet" href="../../css/style.css" />
       
     <style>
@@ -34,7 +31,6 @@
 
       @media print {
         body { background-color: white; }
-        /* Linter Fix: Changed auto to 0 to support older browsers */
         .a4-paper { margin: 0; box-shadow: none; min-height: 0; }
       }
     </style>
@@ -43,47 +39,82 @@
     <div class="a4-paper flex flex-col relative">
       
       <!-- HEADER -->
-      <header class="flex justify-between items-start border-b-2 border-amber-500 pb-6 mb-10 shrink-0">
+      <header class="flex justify-between items-start border-b-4 border-amber-500 pb-6 mb-10 shrink-0">
         <div class="flex items-center gap-4">
-          <!-- Path Fix: Adjusted to reach the images folder -->
           <img src="../images/BB.png" alt="Beloved Berachah Logo" class="w-16 h-16 object-contain" />
           <div>
-            <h1 class="font-serif text-2xl font-semibold text-slate-900 tracking-tight">Beloved Berachah CIC</h1>
-            <p class="text-amber-600 text-xs font-semibold uppercase tracking-widest mt-1">Free Resource Guide</p>
+            <h1 class="font-serif text-3xl font-semibold text-slate-900 tracking-tight">Beloved Berachah CIC</h1>
+            <p class="text-amber-600 text-xs font-bold uppercase tracking-widest mt-1">Free Resource Guide</p>
           </div>
         </div>
-        <div class="text-right text-slate-500 text-sm font-light">
+        <div class="text-right text-slate-500 text-sm font-medium">
           <p>hello@belovedberachah.org</p>
           <p>www.belovedberachah.org</p>
         </div>
       </header>
 
       <!-- MAIN CONTENT -->
-      <main class="grow prose prose-slate prose-p:font-light prose-h2:font-serif prose-h2:text-3xl prose-h2:text-slate-900 prose-h3:font-serif prose-h3:text-xl max-w-none">
+      <main class="grow px-4">
         
-        <h2 class="text-center mb-8">Understanding Trauma: A Brief Guide</h2>
+        <h2 class="text-4xl font-serif text-slate-900 text-center mb-6">Understanding Trauma</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto mb-8 rounded-full"></div>
         
-        <p>Trauma is the lasting emotional response that often results from living through a distressing event. This guide helps community leaders recognize trauma and respond with compassion.</p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-10 font-light text-center px-8">
+          Trauma is the lasting emotional response that often results from living through a distressing event. This guide helps community leaders recognize trauma and respond with compassion.
+        </p>
         
-        <h3>The Brain's Response</h3>
-        <p>When an individual experiences trauma, the brain's alarm system takes over. This often results in three automatic responses:</p>
-        <ul>
-          <li><strong>Fight:</strong> Aggression, defensiveness, or hyper-vigilance.</li>
-          <li><strong>Flight:</strong> Avoidance, fleeing a situation, or extreme anxiety.</li>
-          <li><strong>Freeze:</strong> Numbing out, disconnecting, or inability to make decisions.</li>
-        </ul>
+        <!-- Highlight Box -->
+        <div class="mb-12 bg-amber-50 rounded-2xl p-8 border border-amber-100">
+          <h3 class="text-2xl font-serif text-amber-700 mb-4 tracking-tight">The Brain's Response</h3>
+          <p class="text-slate-700 mb-6 leading-relaxed font-light">When an individual experiences trauma, the brain's alarm system takes over. This often results in three automatic responses:</p>
+          
+          <ul class="space-y-4 text-slate-700">
+            <li class="flex items-start">
+              <span class="text-amber-500 mr-3 mt-1 shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              </span>
+              <div><strong class="font-semibold text-slate-900">Fight:</strong> Aggression, defensiveness, or hyper-vigilance.</div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-amber-500 mr-3 mt-1 shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              </span>
+              <div><strong class="font-semibold text-slate-900">Flight:</strong> Avoidance, fleeing a situation, or extreme anxiety.</div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-amber-500 mr-3 mt-1 shrink-0">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              </span>
+              <div><strong class="font-semibold text-slate-900">Freeze:</strong> Numbing out, disconnecting, or inability to make decisions.</div>
+            </li>
+          </ul>
+        </div>
 
-        <h3>Core Principles of Trauma-Informed Support</h3>
-        <ul>
-          <li><strong>Safety:</strong> Ensuring physical and emotional safety is the top priority.</li>
-          <li><strong>Trustworthiness:</strong> Maintaining clear boundaries and consistency.</li>
-          <li><strong>Choice:</strong> Returning a sense of control to the individual.</li>
-          <li><strong>Collaboration:</strong> Making decisions <em>with</em> them, not <em>for</em> them.</li>
-        </ul>
+        <div>
+          <h3 class="text-2xl font-serif text-slate-900 mb-6 tracking-tight">Core Principles of Support</h3>
+          <ul class="space-y-5 text-slate-700 font-light">
+            <li class="flex items-start border-b border-slate-100 pb-4">
+              <span class="text-amber-500 mr-4 font-serif text-2xl font-bold leading-none">1.</span>
+              <div><strong class="font-semibold text-slate-900">Safety:</strong> Ensuring physical and emotional safety is the top priority.</div>
+            </li>
+            <li class="flex items-start border-b border-slate-100 pb-4">
+              <span class="text-amber-500 mr-4 font-serif text-2xl font-bold leading-none">2.</span>
+              <div><strong class="font-semibold text-slate-900">Trustworthiness:</strong> Maintaining clear boundaries and consistency.</div>
+            </li>
+            <li class="flex items-start border-b border-slate-100 pb-4">
+              <span class="text-amber-500 mr-4 font-serif text-2xl font-bold leading-none">3.</span>
+              <div><strong class="font-semibold text-slate-900">Choice:</strong> Returning a sense of control to the individual.</div>
+            </li>
+            <li class="flex items-start pb-2">
+              <span class="text-amber-500 mr-4 font-serif text-2xl font-bold leading-none">4.</span>
+              <div><strong class="font-semibold text-slate-900">Collaboration:</strong> Making decisions <em>with</em> them, not <em>for</em> them.</div>
+            </li>
+          </ul>
+        </div>
       </main>
 
       <!-- FOOTER -->
-      <footer class="mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-400 shrink-0">
+      <footer class="mt-12 pt-6 border-t border-slate-200 text-center text-xs text-slate-400 shrink-0 font-light">
         <p>This document is provided for educational purposes by Beloved Berachah CIC. Company No: 16685295</p>
       </footer>
       
