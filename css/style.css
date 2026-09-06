@@ -1081,9 +1081,6 @@
     .hover\:bg-amber-50:hover {
       background-color: var(--color-amber-50);
     }
-    .hover\:bg-amber-500:hover {
-      background-color: var(--color-amber-500);
-    }
     .hover\:bg-amber-600:hover {
       background-color: var(--color-amber-600);
     }
