@@ -18,7 +18,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/sw.js");
+          navigator.serviceWorker.register("./sw.js");
         });
       }
     </script>
@@ -351,7 +351,7 @@
               ></div>
               <!-- Working Image of diverse women in a support circle -->
               <img
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=60"
                 alt="Women in a supportive community"
                 class="w-full h-full object-cover absolute inset-0 transform transition duration-700 group-hover:scale-105"
               />
@@ -440,6 +440,7 @@
                 src="assets/images/brenda fraser.jpg"
                 alt="Brenda Fraser"
                 class="w-full h-full object-cover scale-105"
+                fetchpriority="high"
               />
             </div>
 
@@ -495,7 +496,7 @@
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
           <div class="md:col-span-1">
-            <h4 class="text-white text-xl font-serif mb-4 tracking-tight">
+            <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
               Beloved Berachah
             </h4>
             <p class="text-sm leading-relaxed mb-4">
@@ -507,7 +508,7 @@
             </p>
           </div>
           <div>
-            <h4
+            <h3
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Quick Links
@@ -536,7 +537,7 @@
             </ul>
           </div>
           <div>
-            <h4
+            <h3
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Contact
@@ -560,7 +561,7 @@
             </ul>
           </div>
           <div>
-            <h4
+            <h3
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Newsletter
@@ -578,7 +579,7 @@
               />
               <button
                 type="submit"
-                class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded transition text-sm"
+                class="bg-amber-600 hover:bg-amber-500 text-slate-900 font-semibold py-2 px-4 rounded transition text-sm"
               >
                 Subscribe
               </button>
