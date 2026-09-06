@@ -25,7 +25,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
+          navigator.serviceWorker.register('./sw.js');
         });
       }
     </script>
@@ -73,7 +73,7 @@
           <span
             class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
           >
-            Beloved <span class="text-amber-500">Berachah</span>
+            Beloved <span class="text-amber-600">Berachah</span>
           </span>
         </a>
 
@@ -98,7 +98,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            class="text-slate-400 hover:text-amber-500 transition-colors"
+            class="text-slate-400 hover:text-amber-600 transition-colors"
           >
             <svg
               class="w-6 h-6"
@@ -115,7 +115,7 @@
           </a>
           <a
             href="donate.html"
-            class="bg-amber-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition shadow-sm"
+            class="bg-amber-600 text-white px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm"
             >Support Us</a
           >
         </div>
@@ -124,7 +124,7 @@
         <button
           type="button"
           aria-label="Open mobile menu"
-          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-500 transition"
+          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-600 transition"
         >
           <svg
             class="w-8 h-8"
@@ -174,7 +174,7 @@
         >
         <a
           href="donate.html"
-          class="block px-4 py-3 mt-4 text-center bg-amber-500 text-white font-semibold rounded-xl shadow-sm"
+          class="block px-4 py-3 mt-4 text-center bg-amber-600 text-white font-semibold rounded-xl shadow-sm"
           >Support Us</a
         >
       </div>
@@ -186,9 +186,10 @@
     >
       <div class="absolute inset-0 z-0 opacity-20">
         <img
-          src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1200&q=80"
           alt="Peaceful nature background"
           class="w-full h-full object-cover"
+          fetchpriority="high"
         />
       </div>
 
@@ -205,7 +206,7 @@
           class="text-6xl md:text-8xl font-serif text-slate-900 mb-6 leading-tight tracking-tight max-w-5xl"
         >
           Hope, Healing, and <br class="hidden md:block" />
-          <span class="text-amber-500 font-medium">Restoration</span>
+          <span class="text-amber-600 font-medium">Restoration</span>
         </h1>
 
         <p
@@ -218,7 +219,7 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="about.html"
-            class="bg-amber-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-amber-600 transition shadow-sm text-lg"
+            class="bg-amber-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm text-lg"
             >Our Vision</a
           >
           <a
@@ -238,10 +239,10 @@
           <h2
             class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight"
           >
-            Our Core <span class="text-amber-500 font-medium">Work</span>
+            Our Core <span class="text-amber-600 font-medium">Work</span>
           </h2>
 
-          <div class="w-12 h-1 bg-amber-500 mx-auto mb-8 rounded-full"></div>
+          <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
           <p class="text-slate-600 text-xl leading-relaxed font-light">
             We provide a safe, compassionate environment through direct support,
             education, and community partnerships.
@@ -400,7 +401,7 @@
               />
               <button
                 type="submit"
-                class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded transition text-sm"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded transition text-sm"
               >
                 Subscribe
               </button>
