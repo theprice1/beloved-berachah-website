@@ -699,6 +699,9 @@
       background-color: color-mix(in oklab, var(--color-amber-200) 30%, transparent);
     }
   }
+  .bg-amber-500 {
+    background-color: var(--color-amber-500);
+  }
   .bg-amber-600 {
     background-color: var(--color-amber-600);
   }
@@ -940,9 +943,6 @@
   }
   .text-slate-400 {
     color: var(--color-slate-400);
-  }
-  .text-slate-500 {
-    color: var(--color-slate-500);
   }
   .text-slate-600 {
     color: var(--color-slate-600);
