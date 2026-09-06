@@ -3,75 +3,190 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO Optimization -->
     <title>Resources & Support | Beloved Berachah CIC</title>
-    <meta name="description" content="Access helpful guides, recommended reading, and signposting to emergency support services for women facing trauma, domestic abuse, and addiction." />
-    
+    <meta
+      name="description"
+      content="Access helpful guides, recommended reading, and signposting to emergency support services for women facing trauma, domestic abuse, and addiction."
+    />
+
     <!-- PWA & Icons -->
     <link rel="icon" type="image/png" href="assets/images/BB.png" />
-    <meta name="theme-color" content="#FBBF24" /> 
+    <meta name="theme-color" content="#FBBF24" />
+
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/images/BB.png" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
 
     <!-- Typography (Playfair Display & Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Local Tailwind CSS -->
     <link rel="stylesheet" href="./css/style.css" />
-      
+
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #FAFAF9; 
-        color: #334155; 
+        background-color: #fafaf9;
+        color: #334155;
       }
       .font-serif {
-        font-family: "Playfair Display", serif; 
+        font-family: "Playfair Display", serif;
       }
     </style>
   </head>
 
   <body class="flex flex-col min-h-screen">
-    
     <!-- Navigation Bar -->
-    <nav class="bg-white text-slate-800 p-4 sticky top-0 z-50 shadow-sm border-b-4 border-amber-500">
-      <div class="container mx-auto flex justify-between items-center max-w-6xl">
-        <a href="index.html" class="flex items-center gap-3 group hover:opacity-80 transition">
-          <img src="assets/images/BB.png" alt="Beloved Berachah Logo" class="h-12 w-12 md:h-14 md:w-14 object-contain" />
-          <span class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1">
+    <nav
+      class="bg-white text-slate-800 p-4 sticky top-0 z-50 shadow-sm border-b-4 border-amber-500"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center max-w-6xl"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-3 group hover:opacity-80 transition"
+        >
+          <img
+            src="assets/images/BB.png"
+            alt="Beloved Berachah Logo"
+            class="h-12 w-12 md:h-14 md:w-14 object-contain"
+          />
+          <span
+            class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
+          >
             Beloved <span class="text-amber-500">Berachah</span>
           </span>
         </a>
+
+        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-medium items-center">
           <a href="index.html" class="hover:text-amber-600 transition">Home</a>
-          <a href="about.html" class="hover:text-amber-600 transition">About Us</a>
-          <a href="services.html" class="hover:text-amber-600 transition">Services & Workshops</a>
-          <!-- Active Page Highlight -->
-          <a href="resources.html" class="text-amber-600 transition" aria-current="page">Resources</a>
-          <a href="contact.html" class="text-amber-600 transition" aria-current="page">Contact</a>
-          
-          <a href="https://www.instagram.com/belovedberachah" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" class="text-slate-400 hover:text-amber-500 transition-colors">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+          <a href="about.html" class="hover:text-amber-600 transition"
+            >About Us</a
+          >
+          <a href="services.html" class="hover:text-amber-600 transition"
+            >Services & Workshops</a
+          >
+          <a href="resources.html" class="hover:text-amber-600 transition"
+            >Resources</a
+          >
+          <a href="contact.html" class="hover:text-amber-600 transition"
+            >Contact</a
+          >
+
+          <a
+            href="https://www.instagram.com/belovedberachah"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="text-slate-400 hover:text-amber-500 transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                clip-rule="evenodd"
+              />
             </svg>
           </a>
-          <a href="donate.html" class="bg-amber-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition shadow-sm">Support Us</a>
+          <a
+            href="donate.html"
+            class="bg-amber-500 text-white px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition shadow-sm"
+            >Support Us</a
+          >
         </div>
-        <button type="button" aria-label="Open mobile menu" class="md:hidden text-slate-800 focus:outline-none">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          type="button"
+          aria-label="Open mobile menu"
+          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-500 transition"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
         </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu (Hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2"
+      >
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          >Services & Workshops</a
+        >
+        <a
+          href="resources.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          >Resources</a
+        >
+        <a
+          href="contact.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          >Contact</a
+        >
+        <a
+          href="donate.html"
+          class="block px-4 py-3 mt-4 text-center bg-amber-500 text-white font-semibold rounded-xl shadow-sm"
+          >Support Us</a
+        >
       </div>
     </nav>
 
     <!-- Inner Page Header -->
     <header class="bg-slate-900 py-20 md:py-24 border-b-4 border-amber-500">
       <div class="container mx-auto px-4 max-w-4xl text-center">
-        <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-tight drop-shadow-sm">
+        <h1
+          class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-tight drop-shadow-sm"
+        >
           Helpful <span class="text-amber-400 font-medium">Resources</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-300 font-light tracking-wide">
-          A collection of guides, reading materials, and immediate support contacts.
+          A collection of guides, reading materials, and immediate support
+          contacts.
         </p>
       </div>
     </header>
@@ -79,35 +194,71 @@
     <!-- Main Content -->
     <main class="grow py-24 bg-white">
       <div class="container mx-auto px-4 max-w-6xl">
-        
         <!-- Emergency Signposting Section (Crucial for this sector) -->
         <section class="mb-24">
           <div class="text-center mb-12 max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight">Need Immediate Help?</h2>
+            <h2
+              class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight"
+            >
+              Need Immediate Help?
+            </h2>
             <div class="w-12 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
             <p class="text-slate-600 text-lg font-light">
-              Beloved Berachah provides ongoing support and workshops, but we are not a crisis service. If you are in immediate danger, please call 999. For 24/7 support, contact the organizations below.
+              Beloved Berachah provides ongoing support and workshops, but we
+              are not a crisis service. If you are in immediate danger, please
+              call 999. For 24/7 support, contact the organizations below.
             </p>
           </div>
 
           <div class="grid md:grid-cols-3 gap-6">
             <!-- Helpline 1 -->
-            <div class="bg-red-50 border border-red-100 rounded-2xl p-8 text-center hover:shadow-md transition">
-              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">Domestic Abuse Helpline</h3>
-              <p class="text-slate-600 text-sm mb-4">Free, 24-hour national helpline run by Refuge.</p>
-              <a href="tel:08082000247" class="text-red-700 text-2xl font-semibold hover:underline block">0808 2000 247</a>
+            <div
+              class="bg-red-50 border border-red-100 rounded-2xl p-8 text-center hover:shadow-md transition"
+            >
+              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">
+                Domestic Abuse Helpline
+              </h3>
+              <p class="text-slate-600 text-sm mb-4">
+                Free, 24-hour national helpline run by Refuge.
+              </p>
+              <a
+                href="tel:08082000247"
+                class="text-red-700 text-2xl font-semibold hover:underline block"
+                >0808 2000 247</a
+              >
             </div>
             <!-- Helpline 2 -->
-            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-8 text-center hover:shadow-md transition">
-              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">Samaritans</h3>
-              <p class="text-slate-600 text-sm mb-4">Whatever you're going through, a Samaritan will face it with you 24/7.</p>
-              <a href="tel:116123" class="text-amber-700 text-2xl font-semibold hover:underline block">116 123</a>
+            <div
+              class="bg-amber-50 border border-amber-100 rounded-2xl p-8 text-center hover:shadow-md transition"
+            >
+              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">
+                Samaritans
+              </h3>
+              <p class="text-slate-600 text-sm mb-4">
+                Whatever you're going through, a Samaritan will face it with you
+                24/7.
+              </p>
+              <a
+                href="tel:116123"
+                class="text-amber-700 text-2xl font-semibold hover:underline block"
+                >116 123</a
+              >
             </div>
             <!-- Helpline 3 -->
-            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center hover:shadow-md transition">
-              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">Mind Mental Health</h3>
-              <p class="text-slate-600 text-sm mb-4">Information and signposting service for mental health support.</p>
-              <a href="tel:03001233393" class="text-blue-700 text-2xl font-semibold hover:underline block">0300 123 3393</a>
+            <div
+              class="bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center hover:shadow-md transition"
+            >
+              <h3 class="text-xl font-serif font-medium text-slate-900 mb-2">
+                Mind Mental Health
+              </h3>
+              <p class="text-slate-600 text-sm mb-4">
+                Information and signposting service for mental health support.
+              </p>
+              <a
+                href="tel:03001233393"
+                class="text-blue-700 text-2xl font-semibold hover:underline block"
+                >0300 123 3393</a
+              >
             </div>
           </div>
         </section>
@@ -117,120 +268,358 @@
 
         <!-- Downloads & Guides (Redesigned Minimalist Grid) -->
         <section class="mb-24">
-          
           <!-- Centered Header -->
           <div class="text-center mb-16 max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight">Free Guides & Downloads</h2>
+            <h2
+              class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight"
+            >
+              Free Guides & Downloads
+            </h2>
             <div class="w-12 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
             <p class="text-slate-600 text-lg font-light">
-              Downloadable PDFs and worksheets to help you or your organization better understand trauma-informed practices.
+              Downloadable PDFs and worksheets to help you or your organization
+              better understand trauma-informed practices.
             </p>
           </div>
 
           <!-- Scalable Minimalist 4-Column Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
             <!-- Sleek Resource Card 1 -->
-            <a href="assets/resources/understanding-trauma.pdf" target="_blank" class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <a
+              href="assets/resources/understanding-trauma.pdf"
+              target="_blank"
+              class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
               </div>
-              <h3 class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Understanding Trauma</h3>
-              <p class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow">A brief overview of how trauma impacts the brain and behavior.</p>
-              <div class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto">
+              <h3
+                class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors"
+              >
+                Understanding Trauma
+              </h3>
+              <p
+                class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow"
+              >
+                A brief overview of how trauma impacts the brain and behavior.
+              </p>
+              <div
+                class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto"
+              >
                 <span>Download</span>
-                <svg class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
               </div>
             </a>
 
             <!-- Sleek Resource Card 2 -->
-            <a href="assets/resources/church-preparation-guide.pdf" target="_blank" class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <a
+              href="assets/resources/church-preparation-guide.pdf"
+              target="_blank"
+              class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
               </div>
-              <h3 class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Preparing Your Space</h3>
-              <p class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow">A checklist for creating safe environments for vulnerable women.</p>
-              <div class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto">
+              <h3
+                class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors"
+              >
+                Preparing Your Space
+              </h3>
+              <p
+                class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow"
+              >
+                A checklist for creating safe environments for vulnerable women.
+              </p>
+              <div
+                class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto"
+              >
                 <span>Download</span>
-                <svg class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
               </div>
             </a>
 
             <!-- Sleek Resource Card 3 -->
-            <a href="assets/resources/mentoring-framework.pdf" target="_blank" class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <a
+              href="assets/resources/mentoring-framework.pdf"
+              target="_blank"
+              class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
               </div>
-              <h3 class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Mentoring Framework</h3>
-              <p class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow">Guidelines and boundaries for volunteers engaging in mentoring.</p>
-              <div class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto">
+              <h3
+                class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors"
+              >
+                Mentoring Framework
+              </h3>
+              <p
+                class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow"
+              >
+                Guidelines and boundaries for volunteers engaging in mentoring.
+              </p>
+              <div
+                class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto"
+              >
                 <span>Download</span>
-                <svg class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
               </div>
             </a>
 
             <!-- Sleek Resource Card 4 -->
-            <a href="assets/resources/session-worksheets.pdf" target="_blank" class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <a
+              href="assets/resources/session-worksheets.pdf"
+              target="_blank"
+              class="group flex flex-col items-center p-8 bg-white border border-slate-100 rounded-2xl hover:border-amber-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center"
+            >
+              <div
+                class="w-16 h-16 bg-slate-50 text-slate-400 rounded-full flex items-center justify-center mb-5 group-hover:bg-amber-50 group-hover:text-amber-500 transition-colors duration-300"
+              >
+                <svg
+                  class="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
               </div>
-              <h3 class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Session Worksheets</h3>
-              <p class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow">Printable reflection exercises used during workshop sessions.</p>
-              <div class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto">
+              <h3
+                class="text-lg font-serif font-medium text-slate-900 mb-3 group-hover:text-amber-600 transition-colors"
+              >
+                Session Worksheets
+              </h3>
+              <p
+                class="text-slate-500 text-sm font-light leading-relaxed mb-6 grow"
+              >
+                Printable reflection exercises used during workshop sessions.
+              </p>
+              <div
+                class="flex items-center text-amber-500 font-semibold text-xs tracking-wider uppercase mt-auto"
+              >
                 <span>Download</span>
-                <svg class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <svg
+                  class="w-4 h-4 ml-1 transform group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
               </div>
             </a>
-
           </div>
         </section>
-
       </div>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500">
+    <footer
+      class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500"
+    >
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
           <div class="md:col-span-1">
-            <h4 class="text-white text-xl font-serif mb-4 tracking-tight">Beloved Berachah</h4>
-            <p class="text-sm leading-relaxed mb-4">Providing hope, healing, and restoration for women affected by trauma and adversity.</p>
-            <p class="text-xs text-slate-400">Registered Community Interest Company<br>Company No: 16685295</p>
+            <h4 class="text-white text-xl font-serif mb-4 tracking-tight">
+              Beloved Berachah
+            </h4>
+            <p class="text-sm leading-relaxed mb-4">
+              Providing hope, healing, and restoration for women affected by
+              trauma and adversity.
+            </p>
+            <p class="text-xs text-slate-400">
+              Registered Community Interest Company<br />Company No: 16685295
+            </p>
           </div>
           <div>
-            <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Quick Links</h4>
+            <h4
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Quick Links
+            </h4>
             <ul class="space-y-3 text-sm">
-              <li><a href="about.html" class="hover:text-amber-400 transition">About Us & Vision</a></li>
-              <li><a href="services.html" class="hover:text-amber-400 transition">Services & Workshops</a></li>
-              <li><a href="resources.html" class="hover:text-amber-400 transition">Resources</a></li>
-              <li><a href="contact.html" class="hover:text-amber-400 transition">Contact & Support</a></li>
+              <li>
+                <a href="about.html" class="hover:text-amber-400 transition"
+                  >About Us & Vision</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-amber-400 transition"
+                  >Services & Workshops</a
+                >
+              </li>
+              <li>
+                <a href="resources.html" class="hover:text-amber-400 transition"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-amber-400 transition"
+                  >Contact & Support</a
+                >
+              </li>
             </ul>
           </div>
           <div>
-            <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contact</h4>
+            <h4
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Contact
+            </h4>
             <ul class="space-y-3 text-sm">
               <li>London, SW15 6XQ</li>
-              <li><a href="tel:07795907776" class="hover:text-amber-400 transition">07795907776</a></li>
-              <li><a href="mailto:hello@belovedberachah.org" class="hover:text-amber-400 transition">Email Us</a></li>
+              <li>
+                <a
+                  href="tel:07795907776"
+                  class="hover:text-amber-400 transition"
+                  >07795907776</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@belovedberachah.org"
+                  class="hover:text-amber-400 transition"
+                  >Email Us</a
+                >
+              </li>
             </ul>
           </div>
           <div>
-            <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Newsletter</h4>
-            <p class="text-sm mb-4">Join our mailing list for updates on workshops and community events.</p>
+            <h4
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Newsletter
+            </h4>
+            <p class="text-sm mb-4">
+              Join our mailing list for updates on workshops and community
+              events.
+            </p>
             <form class="flex flex-col gap-3">
-              <input type="email" placeholder="Email address" class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm" required>
-              <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded transition text-sm">Subscribe</button>
+              <input
+                type="email"
+                placeholder="Email address"
+                class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded transition text-sm"
+              >
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
-        <div class="pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center">
+        <div
+          class="pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center"
+        >
           <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
           <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
-            <a href="#" class="hover:text-slate-300 transition">Safeguarding</a>
+            <a href="privacy.html" class="hover:text-slate-300 transition"
+              >Privacy Policy</a
+            >
+            <a href="safeguarding.html" class="hover:text-slate-300 transition"
+              >Safeguarding</a
+            >
           </div>
         </div>
       </div>
     </footer>
+    <script>
+      const btn = document.querySelector(
+        'button[aria-label="Open mobile menu"]',
+      );
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>

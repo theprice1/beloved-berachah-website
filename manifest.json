@@ -1,0 +1,21 @@
+{
+  "name": "Beloved Berachah",
+  "short_name": "Berachah",
+  "description": "Providing hope, healing, and restoration for women affected by trauma.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FAFAF9",
+  "theme_color": "#FBBF24",
+  "icons": [
+    {
+      "src": "assets/images/BB.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/BB.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

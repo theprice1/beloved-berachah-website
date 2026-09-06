@@ -18,6 +18,8 @@
           "-webkit-text-size-adjust"
         ]
       }
-    ]
+    ],
+    "manifest-exists": "off",
+    "apple-touch-icons": "off"
   }
 }
