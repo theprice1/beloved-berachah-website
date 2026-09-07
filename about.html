@@ -9,6 +9,15 @@
       content="Learn about our vision, objectives, and meet the founder of Beloved Berachah CIC."
     />
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <link rel="icon" type="image/png" href="assets/images/BB.png" />
     <meta name="theme-color" content="#FBBF24" />
 
@@ -16,9 +25,9 @@
     <link rel="manifest" href="manifest.json" />
     <link rel="apple-touch-icon" href="assets/images/BB.png" />
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./sw.js");
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').catch(err => console.log('Service Worker failed: ', err));
         });
       }
     </script>
@@ -66,23 +75,23 @@
           <span
             class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
           >
-            Beloved <span class="text-amber-600">Berachah</span>
+            Beloved <span class="text-amber-700">Berachah</span>
           </span>
         </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-medium items-center">
-          <a href="index.html" class="hover:text-amber-600 transition">Home</a>
-          <a href="about.html" class="hover:text-amber-600 transition"
+          <a href="index.html" class="hover:text-amber-700 transition">Home</a>
+          <a href="about.html" class="hover:text-amber-700 transition"
             >About Us</a
           >
-          <a href="services.html" class="hover:text-amber-600 transition"
+          <a href="services.html" class="hover:text-amber-700 transition"
             >Services & Workshops</a
           >
-          <a href="resources.html" class="hover:text-amber-600 transition"
+          <a href="resources.html" class="hover:text-amber-700 transition"
             >Resources</a
           >
-          <a href="contact.html" class="hover:text-amber-600 transition"
+          <a href="contact.html" class="hover:text-amber-700 transition"
             >Contact</a
           >
 
@@ -91,7 +100,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            class="text-slate-400 hover:text-amber-600 transition-colors"
+            class="text-slate-400 hover:text-amber-700 transition-colors"
           >
             <svg
               class="w-6 h-6"
@@ -117,7 +126,7 @@
         <button
           type="button"
           aria-label="Open mobile menu"
-          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-600 transition"
+          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
         >
           <svg
             class="w-8 h-8"
@@ -142,27 +151,27 @@
       >
         <a
           href="index.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Home</a
         >
         <a
           href="about.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >About Us</a
         >
         <a
           href="services.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Services & Workshops</a
         >
         <a
           href="resources.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Resources</a
         >
         <a
           href="contact.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Contact</a
         >
         <a
@@ -198,7 +207,7 @@
               <h2
                 class="text-4xl md:text-5xl font-serif text-slate-900 mb-8 tracking-tight"
               >
-                Our <span class="text-amber-600 font-medium">Vision</span>
+                Our <span class="text-amber-700 font-medium">Vision</span>
               </h2>
               <div
                 class="prose prose-slate prose-lg text-slate-600 font-light leading-relaxed"
@@ -227,7 +236,7 @@
                 </h3>
                 <ul class="space-y-4 text-slate-700">
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -246,7 +255,7 @@
                     >
                   </li>
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -266,7 +275,7 @@
                     >
                   </li>
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -285,7 +294,7 @@
                     >
                   </li>
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -301,7 +310,7 @@
                     <span>Promote resilience, recovery, and wellbeing.</span>
                   </li>
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -320,7 +329,7 @@
                     >
                   </li>
                   <li class="flex items-start">
-                    <span class="text-amber-600 mr-3 mt-1 shrink-0">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0">
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -498,7 +507,7 @@
           <div class="md:col-span-1">
             <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
               Beloved Berachah
-            </h4>
+            </h3>
             <p class="text-sm leading-relaxed mb-4">
               Providing hope, healing, and restoration for women affected by
               trauma and adversity.
@@ -512,7 +521,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Quick Links
-            </h4>
+            </h3>
             <ul class="space-y-3 text-sm">
               <li>
                 <a href="about.html" class="hover:text-amber-400 transition"
@@ -541,7 +550,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Contact
-            </h4>
+            </h3>
             <ul class="space-y-3 text-sm">
               <li>London, SW15 6XQ</li>
               <li>
@@ -565,7 +574,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Newsletter
-            </h4>
+            </h3>
             <p class="text-sm mb-4">
               Join our mailing list for updates on workshops and community
               events.

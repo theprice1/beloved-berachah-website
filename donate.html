@@ -9,6 +9,15 @@
       content="Support Beloved Berachah CIC in bringing hope, healing, and restoration to women affected by trauma."
     />
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <link rel="icon" type="image/png" href="assets/images/BB.png" />
     <meta name="theme-color" content="#FBBF24" />
 
@@ -18,7 +27,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js');
+          navigator.serviceWorker.register('./sw.js').catch(err => console.log('Service Worker failed: ', err));
         });
       }
     </script>
@@ -64,23 +73,23 @@
           <span
             class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
           >
-            Beloved <span class="text-amber-600">Berachah</span>
+            Beloved <span class="text-amber-700">Berachah</span>
           </span>
         </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-medium items-center">
-          <a href="index.html" class="hover:text-amber-600 transition">Home</a>
-          <a href="about.html" class="hover:text-amber-600 transition"
+          <a href="index.html" class="hover:text-amber-700 transition">Home</a>
+          <a href="about.html" class="hover:text-amber-700 transition"
             >About Us</a
           >
-          <a href="services.html" class="hover:text-amber-600 transition"
+          <a href="services.html" class="hover:text-amber-700 transition"
             >Services & Workshops</a
           >
-          <a href="resources.html" class="hover:text-amber-600 transition"
+          <a href="resources.html" class="hover:text-amber-700 transition"
             >Resources</a
           >
-          <a href="contact.html" class="hover:text-amber-600 transition"
+          <a href="contact.html" class="hover:text-amber-700 transition"
             >Contact</a
           >
 
@@ -89,7 +98,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            class="text-slate-400 hover:text-amber-600 transition-colors"
+            class="text-slate-400 hover:text-amber-700 transition-colors"
           >
             <svg
               class="w-6 h-6"
@@ -115,7 +124,7 @@
         <button
           type="button"
           aria-label="Open mobile menu"
-          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-600 transition"
+          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
         >
           <svg
             class="w-8 h-8"
@@ -140,27 +149,27 @@
       >
         <a
           href="index.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Home</a
         >
         <a
           href="about.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >About Us</a
         >
         <a
           href="services.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Services & Workshops</a
         >
         <a
           href="resources.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Resources</a
         >
         <a
           href="contact.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-xl font-medium"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
           >Contact</a
         >
         <a
@@ -173,8 +182,11 @@
 
     <!-- Main Content (Sleek Background) -->
     <main
-      class="grow py-20 bg-slate-900 relative flex items-center justify-center border-b-4 border-amber-500"
+      class="grow py-20 bg-slate-900 relative flex flex-col items-center justify-center border-b-4 border-amber-500"
     >
+      <!-- Visually Hidden H1 for Screen Readers -->
+      <h1 class="sr-only">Support Beloved Berachah</h1>
+
       <!-- Decorative Glow -->
       <div
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-amber-600/20 rounded-full blur-[100px] pointer-events-none"
@@ -186,7 +198,7 @@
           class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100 text-center"
         >
           <div
-            class="w-16 h-16 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            class="w-16 h-16 bg-amber-50 text-amber-700 rounded-2xl flex items-center justify-center mx-auto mb-6"
           >
             <svg
               class="w-8 h-8"
@@ -203,13 +215,13 @@
             </svg>
           </div>
 
-          <h1
+          <h2
             class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight"
           >
             Make a Donation
-          </h1>
+          </h2>
 
-          <p class="text-slate-400 font-light mb-10 leading-relaxed">
+          <p class="text-slate-600 font-light mb-10 leading-relaxed">
             Your financial support allows us to continue providing
             trauma-informed resources, workshops, and vital community
             interventions.
@@ -218,7 +230,7 @@
           <!-- Mock Amounts -->
           <div class="grid grid-cols-3 gap-3 mb-8">
             <button
-              class="border-2 border-slate-100 text-slate-600 py-3 rounded-xl font-medium hover:border-amber-500 hover:text-amber-600 transition"
+              class="border-2 border-slate-100 text-slate-700 py-3 rounded-xl font-medium hover:border-amber-500 hover:text-amber-700 transition"
             >
               £10
             </button>
@@ -228,7 +240,7 @@
               £25
             </button>
             <button
-              class="border-2 border-slate-100 text-slate-600 py-3 rounded-xl font-medium hover:border-amber-500 hover:text-amber-600 transition"
+              class="border-2 border-slate-100 text-slate-700 py-3 rounded-xl font-medium hover:border-amber-500 hover:text-amber-700 transition"
             >
               £50
             </button>
@@ -257,10 +269,10 @@
           <!-- Prototype Disclaimer -->
           <div class="pt-6 border-t border-slate-100">
             <p
-              class="text-xs text-slate-400 font-light flex items-start text-left bg-slate-50 p-4 rounded-lg"
+              class="text-xs text-slate-600 font-light flex items-start text-left bg-slate-50 p-4 rounded-lg"
             >
               <svg
-                class="w-4 h-4 text-slate-400 mr-2 shrink-0 mt-0.5"
+                class="w-4 h-4 text-slate-500 mr-2 shrink-0 mt-0.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -290,7 +302,7 @@
           <div class="md:col-span-1">
             <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
               Beloved Berachah
-            </h4>
+            </h3>
             <p class="text-sm leading-relaxed mb-4">
               Providing hope, healing, and restoration for women affected by
               trauma and adversity.
@@ -304,7 +316,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Quick Links
-            </h4>
+            </h3>
             <ul class="space-y-3 text-sm">
               <li>
                 <a href="about.html" class="hover:text-amber-400 transition"
@@ -333,7 +345,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Contact
-            </h4>
+            </h3>
             <ul class="space-y-3 text-sm">
               <li>London, SW15 6XQ</li>
               <li>
@@ -357,7 +369,7 @@
               class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
             >
               Newsletter
-            </h4>
+            </h3>
             <p class="text-sm mb-4">
               Join our mailing list for updates on workshops and community
               events.
