@@ -16,8 +16,8 @@
     <!-- Preconnect to Google Tag Manager to speed up GA4 -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics (GA4) - DEFERRED for Performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -40,13 +40,26 @@
       }
     </script>
 
-    <!-- Typography (Playfair Display) -->
+    <!-- Typography (Playfair Display & Inter) - ASYNCHRONOUS LOAD -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
-      rel="stylesheet"
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" 
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+      media="print" 
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
+      />
+    </noscript>
 
     <!-- Local Tailwind CSS -->
     <link rel="stylesheet" href="./css/style.css" />
@@ -78,7 +91,7 @@
           <img
             src="assets/images/BB.png"
             alt="Beloved Berachah Logo"
-            width="48" 
+            width="48"
             height="48"
             class="h-12 w-12 md:h-14 md:w-14 object-contain"
           />
@@ -121,325 +134,325 @@
               <path
                 fill-rule="evenodd"
                 d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-        <a
-          href="donate.html"
-          class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm"
-          >Support Us</a
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="donate.html"
+            class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm"
+            >Support Us</a
+          >
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          type="button"
+          aria-label="Open mobile menu"
+          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
         >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button
-        type="button"
-        aria-label="Open mobile menu"
-        class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
+      <!-- Mobile Dropdown Menu (Hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2"
       >
-        <svg
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        <a
+          href="index.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
+          >Home</a
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Dropdown Menu (Hidden by default) -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2"
-    >
-      <a
-        href="index.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Home</a
-      >
-      <a
-        href="about.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >About Us</a
-      >
-      <a
-        href="services.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Services & Workshops</a
-      >
-      <a
-        href="resources.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Resources</a
-      >
-      <a
-        href="contact.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Contact</a
-      >
-      <a
-        href="donate.html"
-        class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm"
-        >Support Us</a
-      >
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header
-    class="relative bg-amber-50 overflow-hidden grow flex flex-col justify-center"
-  >
-    <div class="absolute inset-0 z-0 opacity-20">
-      <img
-        src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=50"
-        alt="Peaceful nature background"
-        class="w-full h-full object-cover"
-        fetchpriority="high"
-      />
-    </div>
-
-    <div
-      class="container mx-auto px-4 py-24 md:py-32 relative z-10 max-w-6xl flex flex-col items-center text-center"
-    >
-      <span
-        class="bg-amber-100 text-amber-700 px-4 py-1 text-sm font-semibold rounded-full mb-6 inline-block border border-amber-200"
-        >Community Interest Company</span
-      >
-
-      <h1
-        class="text-6xl md:text-8xl font-serif text-slate-900 mb-6 leading-tight tracking-tight max-w-5xl"
-      >
-        Hope, Healing, and <br class="hidden md:block" />
-        <span class="text-amber-700 font-medium">Restoration</span>
-      </h1>
-
-      <p
-        class="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed font-light"
-      >
-        Empowering women affected by trauma, addiction, domestic abuse, and
-        mental health challenges to rediscover their identity and rebuild
-        their lives.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="about.html"
-          class="bg-amber-500 text-slate-900 px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm text-lg"
-          >Our Vision</a
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
+          >Services & Workshops</a
+        >
+        <a
+          href="resources.html"
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
+          >Resources</a
         >
         <a
           href="contact.html"
-          class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-md font-semibold hover:bg-slate-50 transition shadow-sm text-lg"
-          >Get Support</a
+          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
+          >Contact</a
+        >
+        <a
+          href="donate.html"
+          class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm"
+          >Support Us</a
         >
       </div>
-    </div>
-  </header>
+    </nav>
 
-  <!-- Core Activities / Editorial Section -->
-  <section class="py-24 bg-white border-t border-slate-100">
-    <div class="container mx-auto px-4 max-w-7xl">
-      <div class="text-center mb-20 max-w-3xl mx-auto">
-        <h2
-          class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight"
-        >
-          Our Core <span class="text-amber-700 font-medium">Work</span>
-        </h2>
-
-        <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
-        <p class="text-slate-600 text-xl leading-relaxed font-light">
-          We provide a safe, compassionate environment through direct support,
-          education, and community partnerships.
-        </p>
+    <!-- Hero Section -->
+    <header
+      class="relative bg-amber-50 overflow-hidden grow flex flex-col justify-center"
+    >
+      <div class="absolute inset-0 z-0 opacity-20">
+        <img
+          src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=600&q=50"
+          alt="Peaceful nature background"
+          class="w-full h-full object-cover"
+          fetchpriority="high"
+        />
       </div>
 
-      <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=50"
-              alt="Two women talking"
-              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-            />
-          </div>
-          <h3
-            class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-          >
-            Compassionate Support
-          </h3>
-          <p class="text-slate-600 leading-relaxed pl-5 font-light">
-            Providing mentoring, encouragement, and advocacy to help women
-            navigate recovery and find relevant resources.
-          </p>
-        </div>
-
-        <div class="group cursor-pointer md:mt-12">
-          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=400&q=50"
-              alt="Open journal and hands"
-              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-            />
-          </div>
-          <h3
-            class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-          >
-            Education & Workshops
-          </h3>
-          <p class="text-slate-600 leading-relaxed pl-5 font-light">
-            Delivering trauma-informed talks and training for churches,
-            charities, and local authorities to reduce stigma.
-          </p>
-        </div>
-
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=50"
-              alt="Diverse women in a circle"
-              class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-            />
-          </div>
-          <h3
-            class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-          >
-            Community Partnerships
-          </h3>
-          <p class="text-slate-600 leading-relaxed pl-5 font-light">
-            Building strong networks across public and private sectors to
-            strengthen support for women in our community.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer
-    class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500"
-  >
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="grid md:grid-cols-4 gap-8 mb-10">
-        <div class="md:col-span-1">
-          <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
-            Beloved Berachah
-          </h3>
-          <p class="text-sm leading-relaxed mb-4">
-            Providing hope, healing, and restoration for women affected by
-            trauma and adversity.
-          </p>
-          <p class="text-xs text-slate-400">
-            Registered Community Interest Company<br />Company No: 16685295
-          </p>
-        </div>
-        <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Quick Links
-          </h3>
-          <ul class="space-y-3 text-sm">
-            <li>
-              <a href="about.html" class="hover:text-amber-400 transition"
-                >About Us & Vision</a
-              >
-            </li>
-            <li>
-              <a href="services.html" class="hover:text-amber-400 transition"
-                >Services & Workshops</a
-              >
-            </li>
-            <li>
-              <a href="resources.html" class="hover:text-amber-400 transition"
-                >Resources</a
-              >
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-amber-400 transition"
-                >Contact & Support</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Contact
-          </h3>
-          <ul class="space-y-3 text-sm">
-            <li>London, SW15 6XQ</li>
-            <li>
-              <a
-                href="tel:07795907776"
-                class="hover:text-amber-400 transition"
-                >07795907776</a
-              >
-            </li>
-            <li>
-              <a
-                href="mailto:hello@belovedberachah.org"
-                class="hover:text-amber-400 transition"
-                >Email Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Newsletter
-          </h3>
-          <p class="text-sm mb-4">
-            Join our mailing list for updates on workshops and community
-            events.
-          </p>
-          <form class="flex flex-col gap-3">
-            <input
-              type="email"
-              placeholder="Email address"
-              class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm"
-              required
-            />
-            <button
-              type="submit"
-              class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-2 px-4 rounded transition text-sm"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
       <div
-        class="pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center"
+        class="container mx-auto px-4 py-24 md:py-32 relative z-10 max-w-6xl flex flex-col items-center text-center"
       >
-        <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="privacy.html" class="hover:text-slate-300 transition"
-            >Privacy Policy</a
+        <span
+          class="bg-amber-100 text-amber-700 px-4 py-1 text-sm font-semibold rounded-full mb-6 inline-block border border-amber-200"
+          >Community Interest Company</span
+        >
+
+        <h1
+          class="text-6xl md:text-8xl font-serif text-slate-900 mb-6 leading-tight tracking-tight max-w-5xl"
+        >
+          Hope, Healing, and <br class="hidden md:block" />
+          <span class="text-amber-700 font-medium">Restoration</span>
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed font-light"
+        >
+          Empowering women affected by trauma, addiction, domestic abuse, and
+          mental health challenges to rediscover their identity and rebuild
+          their lives.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="about.html"
+            class="bg-amber-500 text-slate-900 px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm text-lg"
+            >Our Vision</a
           >
-          <a href="safeguarding.html" class="hover:text-slate-300 transition"
-            >Safeguarding</a
+          <a
+            href="contact.html"
+            class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-md font-semibold hover:bg-slate-50 transition shadow-sm text-lg"
+            >Get Support</a
           >
         </div>
       </div>
-    </div>
-  </footer>
-  <script>
-    const btn = document.querySelector(
-      'button[aria-label="Open mobile menu"]',
-    );
-    const menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  </script>
-</body>
+    </header>
+
+    <!-- Core Activities / Editorial Section -->
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-20 max-w-3xl mx-auto">
+          <h2
+            class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight"
+          >
+            Our Core <span class="text-amber-700 font-medium">Work</span>
+          </h2>
+
+          <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
+          <p class="text-slate-600 text-xl leading-relaxed font-light">
+            We provide a safe, compassionate environment through direct support,
+            education, and community partnerships.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
+          <div class="group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=50"
+                alt="Two women talking"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
+              />
+            </div>
+            <h3
+              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
+            >
+              Compassionate Support
+            </h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light">
+              Providing mentoring, encouragement, and advocacy to help women
+              navigate recovery and find relevant resources.
+            </p>
+          </div>
+
+          <div class="group cursor-pointer md:mt-12">
+            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=400&q=50"
+                alt="Open journal and hands"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
+              />
+            </div>
+            <h3
+              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
+            >
+              Education & Workshops
+            </h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light">
+              Delivering trauma-informed talks and training for churches,
+              charities, and local authorities to reduce stigma.
+            </p>
+          </div>
+
+          <div class="group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=50"
+                alt="Diverse women in a circle"
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
+              />
+            </div>
+            <h3
+              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
+            >
+              Community Partnerships
+            </h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light">
+              Building strong networks across public and private sectors to
+              strengthen support for women in our community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer
+      class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500"
+    >
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+          <div class="md:col-span-1">
+            <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
+              Beloved Berachah
+            </h3>
+            <p class="text-sm leading-relaxed mb-4">
+              Providing hope, healing, and restoration for women affected by
+              trauma and adversity.
+            </p>
+            <p class="text-xs text-slate-400">
+              Registered Community Interest Company<br />Company No: 16685295
+            </p>
+          </div>
+          <div>
+            <h3
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="about.html" class="hover:text-amber-400 transition"
+                  >About Us & Vision</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="hover:text-amber-400 transition"
+                  >Services & Workshops</a
+                >
+              </li>
+              <li>
+                <a href="resources.html" class="hover:text-amber-400 transition"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-amber-400 transition"
+                  >Contact & Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Contact
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li>London, SW15 6XQ</li>
+              <li>
+                <a
+                  href="tel:07795907776"
+                  class="hover:text-amber-400 transition"
+                  >07795907776</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@belovedberachah.org"
+                  class="hover:text-amber-400 transition"
+                  >Email Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
+            >
+              Newsletter
+            </h3>
+            <p class="text-sm mb-4">
+              Join our mailing list for updates on workshops and community
+              events.
+            </p>
+            <form class="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Email address"
+                class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-2 px-4 rounded transition text-sm"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="privacy.html" class="hover:text-slate-300 transition"
+              >Privacy Policy</a
+            >
+            <a href="safeguarding.html" class="hover:text-slate-300 transition"
+              >Safeguarding</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const btn = document.querySelector(
+        'button[aria-label="Open mobile menu"]',
+      );
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>

@@ -12,8 +12,8 @@
     <!-- Preconnect to Google Tag Manager to speed up GA4 -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics (GA4) - DEFERRED for Performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -35,12 +35,26 @@
       }
     </script>
 
+    <!-- Typography (Playfair Display & Inter) - ASYNCHRONOUS LOAD for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" 
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      media="print" 
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
 
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -189,9 +203,6 @@
     <main
       class="grow py-20 bg-slate-900 relative flex flex-col items-center justify-center border-b-4 border-amber-500"
     >
-      <!-- Visually Hidden H1 for Screen Readers -->
-      <h1 class="sr-only">Support Beloved Berachah</h1>
-
       <!-- Decorative Glow -->
       <div
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-amber-600/20 rounded-full blur-[100px] pointer-events-none"
@@ -220,11 +231,11 @@
             </svg>
           </div>
 
-          <h2
+          <h1
             class="text-3xl md:text-4xl font-serif text-slate-900 mb-4 tracking-tight"
           >
             Make a Donation
-          </h2>
+          </h1>
 
           <p class="text-slate-600 font-light mb-10 leading-relaxed">
             Your financial support allows us to continue providing

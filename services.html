@@ -11,8 +11,11 @@
       content="Discover our trauma-informed workshops, speaking engagements, and community training programs designed to support women and educate organizations."
     />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Preconnect to Google Tag Manager to speed up GA4 -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- Google Analytics (GA4) - DEFERRED for Performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -35,13 +38,26 @@
       }
     </script>
 
-    <!-- Typography (Playfair Display & Inter) -->
+    <!-- Typography (Playfair Display & Inter) - ASYNCHRONOUS LOAD -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" 
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      media="print" 
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
 
     <!-- Local Tailwind CSS -->
     <link rel="stylesheet" href="./css/style.css" />
@@ -73,6 +89,8 @@
           <img
             src="assets/images/BB.png"
             alt="Beloved Berachah Logo"
+            width="48"
+            height="48"
             class="h-12 w-12 md:h-14 md:w-14 object-contain"
           />
           <span
