@@ -767,6 +767,9 @@
   .p-10 {
     padding: calc(var(--spacing) * 10);
   }
+  .p-12 {
+    padding: calc(var(--spacing) * 12);
+  }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -814,6 +817,9 @@
   }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
+  }
+  .pt-16 {
+    padding-top: calc(var(--spacing) * 16);
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
@@ -940,6 +946,9 @@
   .text-red-700 {
     color: var(--color-red-700);
   }
+  .text-red-800 {
+    color: var(--color-red-800);
+  }
   .text-slate-300 {
     color: var(--color-slate-300);
   }
@@ -1054,6 +1063,9 @@
     .group-hover\:bg-amber-50:is(:where(.group):hover *) {
       background-color: var(--color-amber-50);
     }
+    .group-hover\:bg-amber-700:is(:where(.group):hover *) {
+      background-color: var(--color-amber-700);
+    }
     .group-hover\:bg-amber-700\/30:is(:where(.group):hover *) {
       background-color: color-mix(in srgb, oklch(55.5% 0.163 48.998) 30%, transparent);
     }
@@ -1067,6 +1079,9 @@
     }
     .group-hover\:text-amber-600:is(:where(.group):hover *) {
       color: var(--color-amber-600);
+    }
+    .group-hover\:text-white:is(:where(.group):hover *) {
+      color: var(--color-white);
     }
     .hover\:-translate-y-1:hover {
       --tw-translate-y: calc(var(--spacing) * -1);
@@ -1101,6 +1116,9 @@
     }
     .hover\:text-amber-800:hover {
       color: var(--color-amber-800);
+    }
+    .hover\:text-red-900:hover {
+      color: var(--color-red-900);
     }
     .hover\:text-slate-300:hover {
       color: var(--color-slate-300);
@@ -1181,6 +1199,9 @@
     .md\:gap-12 {
       gap: calc(var(--spacing) * 12);
     }
+    .md\:p-8 {
+      padding: calc(var(--spacing) * 8);
+    }
     .md\:p-10 {
       padding: calc(var(--spacing) * 10);
     }
@@ -1195,6 +1216,10 @@
     }
     .md\:py-32 {
       padding-block: calc(var(--spacing) * 32);
+    }
+    .md\:text-2xl {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
     }
     .md\:text-3xl {
       font-size: var(--text-3xl);
@@ -1215,6 +1240,10 @@
     .md\:text-8xl {
       font-size: var(--text-8xl);
       line-height: var(--tw-leading, var(--text-8xl--line-height));
+    }
+    .md\:text-base {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
     .md\:text-xl {
       font-size: var(--text-xl);
