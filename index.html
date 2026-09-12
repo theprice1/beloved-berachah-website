@@ -5,28 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Optimization -->
-    <title>Beloved Berachah CIC | Hope, Healing & Restoration</title>
-    <meta
-      name="description"
-      content="Supporting women affected by trauma, addiction, domestic abuse, and mental health challenges through advocacy, education, and compassionate community support."
-    />
+    <title>Beloved Berachah CIC | Welcome</title>
+    <meta name="description" content="Supporting women to heal, recover, and thrive from trauma, addiction, domestic abuse, and mental health challenges." />
     <meta name="author" content="Beloved Berachah CIC" />
     <meta name="google-site-verification" content="YOUR_NEW_VERIFICATION_TAG" />
 
-    <!-- Preconnect to Google Tag Manager to speed up GA4 -->
+    <!-- Preconnect to Google Tag Manager -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <!-- Google Analytics (GA4) - DEFERRED for Performance -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <!-- PWA & Icons -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <link rel="apple-touch-icon" href="assets/images/BB.png" />
     <link rel="icon" type="image/png" href="assets/images/BB.png" />
     <meta name="theme-color" content="#FBBF24" />
@@ -43,22 +31,10 @@
     <!-- Typography (Playfair Display & Inter) - ASYNCHRONOUS LOAD -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-      rel="preload" 
-      as="style" 
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" 
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
-      media="print" 
-      onload="this.media='all'"
-    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
-      />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
     </noscript>
 
     <!-- Local Tailwind CSS -->
@@ -77,382 +53,401 @@
   </head>
 
   <body class="flex flex-col min-h-screen">
+    
+    <!-- PWA Install Prompt (Hidden by Default) -->
+    <div id="pwa-install-banner" class="hidden fixed top-20 inset-x-4 md:left-auto md:right-4 md:w-96 z-50 transition-all duration-500 transform translate-y-0">
+      <div class="bg-slate-900 text-white p-4 rounded-xl shadow-2xl border border-slate-700 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/BB.png" alt="Beloved Berachah Icon" class="w-10 h-10 rounded-md bg-white p-1 object-contain">
+          <div>
+            <p class="font-semibold text-sm">Install Beloved Berachah</p>
+            <p class="text-xs text-slate-300">Add to home screen for offline support</p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button id="pwa-close-btn" class="text-slate-400 hover:text-white text-sm px-2">Cancel</button>
+          <button id="pwa-install-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-bold py-1 px-3 rounded transition">Install</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation Bar -->
-    <nav
-      class="bg-white text-slate-800 p-4 sticky top-0 z-50 shadow-sm border-b-4 border-amber-500"
-    >
-      <div
-        class="container mx-auto flex justify-between items-center max-w-6xl"
-      >
-        <a
-          href="index.html"
-          class="flex items-center gap-3 group hover:opacity-80 transition"
-        >
-          <img
-            src="assets/images/BB.png"
-            alt="Beloved Berachah Logo"
-            width="48"
-            height="48"
-            class="h-12 w-12 md:h-14 md:w-14 object-contain"
-          />
-          <span
-            class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
-          >
-            Beloved <span class="text-amber-700">Berachah</span>
-          </span>
+    <nav class="bg-white text-slate-800 p-4 sticky top-0 z-40 shadow-sm border-b-4 border-amber-500">
+      <div class="container mx-auto flex justify-between items-center max-w-6xl">
+        <a href="index.html" class="flex items-center gap-3 group hover:opacity-80 transition">
+          <img src="assets/images/BB.png" alt="Beloved Berachah Logo" width="48" height="48" class="h-12 w-12 md:h-14 md:w-14 object-contain" />
+          <span class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1">Beloved <span class="text-amber-700">Berachah</span></span>
         </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-medium items-center">
           <a href="index.html" class="hover:text-amber-700 transition">Home</a>
-          <a href="about.html" class="hover:text-amber-700 transition"
-            >About Us</a
-          >
-          <a href="services.html" class="hover:text-amber-700 transition"
-            >Services & Workshops</a
-          >
-          <a href="resources.html" class="hover:text-amber-700 transition"
-            >Resources</a
-          >
-          <a href="contact.html" class="hover:text-amber-700 transition"
-            >Contact</a
-          >
-
-          <a
-            href="https://www.instagram.com/belovedberachah"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            class="text-slate-400 hover:text-amber-700 transition-colors"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-          <a
-            href="donate.html"
-            class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm"
-            >Support Us</a
-          >
+          <a href="about.html" class="hover:text-amber-700 transition">About Us</a>
+          <a href="services.html" class="hover:text-amber-700 transition">Services & Workshops</a>
+          <a href="resources.html" class="hover:text-amber-700 transition">Resources</a>
+          <a href="contact.html" class="hover:text-amber-700 transition">Contact</a>
+          <a href="donate.html" class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm">Support Us</a>
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <button
-          type="button"
-          aria-label="Open mobile menu"
-          class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
-        >
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
+        <button type="button" aria-label="Open mobile menu" class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
 
-      <!-- Mobile Dropdown Menu (Hidden by default) -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2"
-      >
-        <a
-          href="index.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-          >Home</a
-        >
-        <a
-          href="about.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-          >About Us</a
-        >
-        <a
-          href="services.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-          >Services & Workshops</a
-        >
-        <a
-          href="resources.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-          >Resources</a
-        >
-        <a
-          href="contact.html"
-          class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-          >Contact</a
-        >
-        <a
-          href="donate.html"
-          class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm"
-          >Support Us</a
-        >
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2">
+        <a href="index.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Home</a>
+        <a href="about.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">About Us</a>
+        <a href="services.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Services & Workshops</a>
+        <a href="resources.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Resources</a>
+        <a href="contact.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Contact</a>
+        <a href="donate.html" class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm">Support Us</a>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <header
-      class="relative bg-amber-50 overflow-hidden grow flex flex-col justify-center"
-    >
+    <header class="relative bg-amber-50 overflow-hidden flex flex-col justify-center">
       <div class="absolute inset-0 z-0 opacity-20">
-        <img
-          src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=600&q=50"
-          alt="Peaceful nature background"
-          class="w-full h-full object-cover"
-          fetchpriority="high"
-        />
+        <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=600&q=50" alt="Peaceful nature background" class="w-full h-full object-cover" fetchpriority="high" />
       </div>
 
-      <div
-        class="container mx-auto px-4 py-24 md:py-32 relative z-10 max-w-6xl flex flex-col items-center text-center"
-      >
-        <span
-          class="bg-amber-100 text-amber-700 px-4 py-1 text-sm font-semibold rounded-full mb-6 inline-block border border-amber-200"
-          >Community Interest Company</span
-        >
+      <div class="container mx-auto px-4 py-24 md:py-32 relative z-10 max-w-6xl flex flex-col items-center text-center">
+        <span class="bg-amber-100 text-amber-800 px-4 py-1 text-sm font-semibold rounded-full mb-6 inline-block border border-amber-200">Community Interest Company</span>
 
-        <h1
-          class="text-6xl md:text-8xl font-serif text-slate-900 mb-6 leading-tight tracking-tight max-w-5xl"
-        >
-          Hope, Healing, and <br class="hidden md:block" />
-          <span class="text-amber-700 font-medium">Restoration</span>
+        <h1 class="text-5xl md:text-7xl font-serif text-slate-900 mb-6 leading-tight tracking-tight max-w-4xl">
+          Welcome to <br class="hidden md:block" />
+          <span class="text-amber-700 font-medium">Beloved Berachah</span>
         </h1>
 
-        <p
-          class="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed font-light"
-        >
-          Empowering women affected by trauma, addiction, domestic abuse, and
-          mental health challenges to rediscover their identity and rebuild
-          their lives.
+        <p class="text-lg md:text-xl text-slate-700 max-w-2xl mb-10 leading-relaxed font-medium">
+          Supporting Women to Heal, Recover, and Thrive.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="about.html"
-            class="bg-amber-500 text-slate-900 px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm text-lg"
-            >Our Vision</a
-          >
-          <a
-            href="contact.html"
-            class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-md font-semibold hover:bg-slate-50 transition shadow-sm text-lg"
-            >Get Support</a
-          >
+          <a href="about.html" class="bg-amber-500 text-slate-900 px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm text-lg">Our Vision</a>
+          <a href="contact.html" class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-md font-semibold hover:bg-slate-50 transition shadow-sm text-lg">Get Support</a>
         </div>
       </div>
     </header>
 
-    <!-- Core Activities / Editorial Section -->
-    <section class="py-24 bg-white border-t border-slate-100">
-      <div class="container mx-auto px-4 max-w-7xl">
-        <div class="text-center mb-20 max-w-3xl mx-auto">
-          <h2
-            class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight"
-          >
-            Our Core <span class="text-amber-700 font-medium">Work</span>
-          </h2>
+    <!-- Mission Text Section -->
+    <section class="py-16 bg-white px-4">
+      <div class="container mx-auto max-w-4xl text-center space-y-6 text-lg font-light leading-relaxed text-slate-700">
+        <p>Beloved Berachah CIC is dedicated to supporting women affected by trauma, addiction, domestic abuse, and mental health challenges. Our mission is to bring hope, healing, and restoration to women who feel overlooked, unheard, isolated, misunderstood, or trapped by their circumstances.</p>
+        <p>Through lived experience, education, advocacy, and compassionate support, we empower women to rebuild their lives, rediscover their worth, and move forward with renewed hope and purpose.</p>
+        <p>Our name, Beloved Berachah (Berachah is a Hebrew word meaning blessing or blessings), reflects our belief that every woman is precious, deeply valued, and created to live a life free from shame, fear, and emotional and spiritual bondage.</p>
+      </div>
+    </section>
 
+    <!-- What We Do -->
+    <section class="py-20 bg-amber-50 border-y border-amber-100">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight">What We <span class="text-amber-700 font-medium">Do</span></h2>
           <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
-          <p class="text-slate-600 text-xl leading-relaxed font-light">
-            We provide a safe, compassionate environment through direct support,
-            education, and community partnerships.
+          <p class="text-slate-600 text-lg leading-relaxed font-light">
+            We provide a range of faith-informed and educational services designed to promote healing, recovery, resilience, and hope.
           </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
-          <div class="group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=50"
-                alt="Two women talking"
-                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-              />
+          <div class="group cursor-pointer bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+            <div class="overflow-hidden rounded-xl mb-6">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=50" alt="Two women talking" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-700 ease-out" />
             </div>
-            <h3
-              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-            >
-              Compassionate Support
-            </h3>
-            <p class="text-slate-600 leading-relaxed pl-5 font-light">
-              Providing mentoring, encouragement, and advocacy to help women
-              navigate recovery and find relevant resources.
+            <h3 class="text-xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4">Mentoring & Support</h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light text-sm">
+              Encouragement, mentoring, and empowerment through lived experience and practical insights that inspire lasting change.
             </p>
           </div>
 
-          <div class="group cursor-pointer md:mt-12">
-            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=400&q=50"
-                alt="Open journal and hands"
-                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-              />
+          <div class="group cursor-pointer bg-white p-4 rounded-2xl shadow-sm border border-slate-100 md:mt-8">
+            <div class="overflow-hidden rounded-xl mb-6">
+              <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=400&q=50" alt="Open journal and hands" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-700 ease-out" />
             </div>
-            <h3
-              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-            >
-              Education & Workshops
-            </h3>
-            <p class="text-slate-600 leading-relaxed pl-5 font-light">
-              Delivering trauma-informed talks and training for churches,
-              charities, and local authorities to reduce stigma.
+            <h3 class="text-xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4">Education & Training</h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light text-sm">
+              Interactive workshops and training courses for churches, charities, and organisations to increase understanding and reduce stigma.
             </p>
           </div>
 
-          <div class="group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=50"
-                alt="Diverse women in a circle"
-                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 ease-out"
-              />
+          <div class="group cursor-pointer bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+            <div class="overflow-hidden rounded-xl mb-6">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=50" alt="Diverse women in a circle" class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-700 ease-out" />
             </div>
-            <h3
-              class="text-2xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4"
-            >
-              Community Partnerships
-            </h3>
-            <p class="text-slate-600 leading-relaxed pl-5 font-light">
-              Building strong networks across public and private sectors to
-              strengthen support for women in our community.
+            <h3 class="text-xl font-serif font-medium text-slate-900 mb-3 border-l-2 border-amber-400 pl-4">Community Initiatives</h3>
+            <p class="text-slate-600 leading-relaxed pl-5 font-light text-sm">
+              Fostering connection, reducing isolation, and signposting women to specialist support services on their journey to restoration.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer
-      class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500"
-    >
-      <div class="container mx-auto px-4 max-w-6xl">
-        <div class="grid md:grid-cols-4 gap-8 mb-10">
-          <div class="md:col-span-1">
-            <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
-              Beloved Berachah
-            </h3>
-            <p class="text-sm leading-relaxed mb-4">
-              Providing hope, healing, and restoration for women affected by
-              trauma and adversity.
-            </p>
-            <p class="text-xs text-slate-400">
-              Registered Community Interest Company<br />Company No: 16685295
-            </p>
+    <!-- Our Impact Section -->
+    <section class="py-20 bg-white px-4">
+      <div class="container mx-auto max-w-5xl text-center">
+        <h2 class="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Our Impact</h2>
+        <p class="mb-10 font-light text-lg text-slate-600 max-w-3xl mx-auto">We believe that recovery is possible, hope can be restored, and lives can be transformed. By sharing knowledge, raising awareness, and fostering supportive communities, we help women:</p>
+        
+        <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-100">
+            <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <p class="text-slate-700 font-medium text-sm">Break free from cycles of addiction and unhealthy behaviours.</p>
           </div>
-          <div>
-            <h3
-              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-            >
-              Quick Links
-            </h3>
-            <ul class="space-y-3 text-sm">
-              <li>
-                <a href="about.html" class="hover:text-amber-400 transition"
-                  >About Us & Vision</a
-                >
-              </li>
-              <li>
-                <a href="services.html" class="hover:text-amber-400 transition"
-                  >Services & Workshops</a
-                >
-              </li>
-              <li>
-                <a href="resources.html" class="hover:text-amber-400 transition"
-                  >Resources</a
-                >
-              </li>
-              <li>
-                <a href="contact.html" class="hover:text-amber-400 transition"
-                  >Contact & Support</a
-                >
-              </li>
-            </ul>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-100">
+            <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <p class="text-slate-700 font-medium text-sm">Understand the impact of trauma and adverse life experiences.</p>
           </div>
-          <div>
-            <h3
-              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-            >
-              Contact
-            </h3>
-            <ul class="space-y-3 text-sm">
-              <li>London, SW15 6XQ</li>
-              <li>
-                <a
-                  href="tel:07795907776"
-                  class="hover:text-amber-400 transition"
-                  >07795907776</a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:hello@belovedberachah.org"
-                  class="hover:text-amber-400 transition"
-                  >Email Us</a
-                >
-              </li>
-            </ul>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-100">
+            <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <p class="text-slate-700 font-medium text-sm">Develop healthier coping strategies and build confidence, resilience, and self-worth.</p>
           </div>
-          <div>
-            <h3
-              class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-            >
-              Newsletter
-            </h3>
-            <p class="text-sm mb-4">
-              Join our mailing list for updates on workshops and community
-              events.
-            </p>
-            <form class="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Email address"
-                class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm"
-                required
-              />
-              <button
-                type="submit"
-                class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-2 px-4 rounded transition text-sm"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-        <div
-          class="pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
-          <div class="flex space-x-6 mt-4 md:mt-0">
-            <a href="privacy.html" class="hover:text-slate-300 transition"
-              >Privacy Policy</a
-            >
-            <a href="safeguarding.html" class="hover:text-slate-300 transition"
-              >Safeguarding</a
-            >
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg border border-slate-100">
+            <svg class="w-6 h-6 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <p class="text-slate-700 font-medium text-sm">Access appropriate support and growth opportunities.</p>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="py-20 bg-slate-900 text-white px-4 border-t-4 border-amber-500">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-serif mb-4">Upcoming Events</h2>
+          <p class="text-slate-400 font-light">Join us for teaching, support, and community.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- No More Bondage Event -->
+          <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 flex flex-col h-full shadow-xl">
+            <span class="bg-amber-500 text-slate-900 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full self-start mb-4">Talk & Testimony</span>
+            <h3 class="font-serif text-3xl mb-3">No More Bondage</h3>
+            <p class="text-amber-400 mb-4 font-medium italic">"Are you tired of repeated negative emotional and behavioural cycles?"</p>
+            <p class="text-sm font-light mb-8 text-slate-300">Come and hear Brenda Fraser share her journey of a life freed from bondage. An afternoon of inspiration, hope, and renewal for women seeking freedom from addiction, trauma, and toxic relationships.</p>
+            <div class="mt-auto space-y-3 text-sm border-t border-slate-700 pt-6">
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Saturday, 29th November 2025</p>
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 1:00pm - 2:30pm</p>
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Community Church Putney, SW15 2LL</p>
+            </div>
+            <a href="contact.html" class="mt-6 block text-center bg-transparent border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-slate-900 font-semibold py-2 px-4 rounded transition">Contact to RSVP</a>
+          </div>
+
+          <!-- Freedom From Shame Event -->
+          <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 flex flex-col h-full shadow-xl">
+            <span class="bg-amber-500 text-slate-900 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full self-start mb-4">Talk & Testimony</span>
+            <h3 class="font-serif text-3xl mb-3">Freedom From Shame</h3>
+            <p class="text-amber-400 mb-4 font-medium italic">"Do you feel weighed down by past experiences, mistakes, or self-judgement?"</p>
+            <p class="text-sm font-light mb-8 text-slate-300">Freedom from shame is possible. Join Brenda Fraser as she shares her powerful journey and practical insights into breaking free from shame and stepping into a new beginning.</p>
+            <div class="mt-auto space-y-3 text-sm border-t border-slate-700 pt-6">
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Saturday, 28th February 2026</p>
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 12:00pm - 1:30pm</p>
+              <p class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> Community Church Putney, SW15 2LL</p>
+            </div>
+            <a href="https://eventbrite.co.uk" target="_blank" rel="noopener noreferrer" class="mt-6 block text-center bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-2 px-4 rounded transition shadow-md">Book via Eventbrite</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section (Expanded Version) -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-auto border-t border-slate-800">
+      <div class="container mx-auto px-4 max-w-6xl grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="md:col-span-1">
+          <h3 class="text-white text-2xl font-serif mb-4 tracking-tight">Beloved Berachah CIC</h3>
+          <p class="text-sm leading-relaxed mb-4 text-slate-400">
+            Supporting women affected by trauma, addiction, domestic abuse, and mental health challenges.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Legal & Registration</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li>Company Number: 16685295</li>
+            <li>Registered in England and Wales.</li>
+            <li>Registered Office: [Insert Address]</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Links & Contact</h3>
+          <ul class="space-y-3 text-sm">
+            <li><a href="mailto:beloved@berachah.org.uk" class="text-amber-400 hover:text-amber-300 transition font-medium">beloved@berachah.org.uk</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+            <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="cookies.html" class="hover:text-white transition">Cookie Policy</a></li>
+            <li><button onclick="openCookieModal()" class="hover:text-white transition underline cursor-pointer">Manage Cookies</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 max-w-6xl mt-12 pt-8 border-t border-slate-800 text-sm text-slate-500 text-center">
+        <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
+      </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 w-full z-60 bg-slate-900 text-white p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t-4 border-amber-500">
+      <div class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm text-slate-300 max-w-3xl">
+          We use cookies to improve your experience, analyse website traffic, and support marketing activity. You can accept, reject, or manage your preferences at any time. Please see our <a href="privacy.html" class="text-amber-500 hover:text-amber-400 underline">Privacy Policy</a> for further information.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+          <button onclick="acceptAllCookies()" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2 px-6 rounded transition text-sm">Accept All</button>
+          <button onclick="rejectCookies()" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 px-6 rounded transition text-sm">Reject</button>
+          <button onclick="openCookieModal()" class="bg-transparent border border-slate-500 hover:border-white text-white font-semibold py-2 px-6 rounded transition text-sm">Manage</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Preferences Modal (Fixed 'hidden' & 'flex' structural conflict) -->
+    <div id="cookie-modal" class="hidden fixed inset-0 z-70 bg-black bg-opacity-75">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 text-slate-900 relative">
+          <h3 class="text-xl font-serif mb-2">Cookie Preferences</h3>
+          <p class="text-sm text-slate-600 mb-6">Manage how we use cookies on your device.</p>
+          
+          <div class="space-y-4 mb-8">
+            <!-- Essential Cookies (Locked) -->
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+              <div>
+                <p class="font-semibold text-sm">Essential Cookies</p>
+                <p class="text-xs text-slate-500">Required for core website functionality.</p>
+              </div>
+              <span class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Always ON</span>
+            </div>
+            
+            <!-- Analytics Cookies (Toggle) -->
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+              <div class="pr-4">
+                <p class="font-semibold text-sm">Analytics Cookies</p>
+                <p class="text-xs text-slate-500">Helps us understand how visitors interact with our website.</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                <input type="checkbox" id="toggle-analytics" aria-label="Enable Analytics Cookies" class="sr-only peer">
+                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+              </label>
+            </div>
+            
+            <!-- Marketing Cookies (Toggle) -->
+            <div class="flex justify-between items-center">
+              <div class="pr-4">
+                <p class="font-semibold text-sm">Marketing Cookies</p>
+                <p class="text-xs text-slate-500">Allows third-party embeds like videos or social media feeds.</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                <input type="checkbox" id="toggle-marketing" aria-label="Enable Marketing Cookies" class="sr-only peer">
+                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+              </label>
+            </div>
+          </div>
+          
+          <div class="flex gap-3">
+            <button onclick="saveCookiePreferences()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded transition">Save Preferences</button>
+            <button onclick="closeCookieModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded transition">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Javascript Logic (Mobile Menu, PWA, & Cookies) -->
     <script>
-      const btn = document.querySelector(
-        'button[aria-label="Open mobile menu"]',
-      );
+      // 1. Mobile Menu Logic
+      const btn = document.querySelector('button[aria-label="Open mobile menu"]');
       const menu = document.getElementById("mobile-menu");
       btn.addEventListener("click", () => {
         menu.classList.toggle("hidden");
       });
+
+      // 2. PWA Installation Prompt Logic
+      let deferredPrompt;
+      const installBanner = document.getElementById('pwa-install-banner');
+      
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault(); 
+        deferredPrompt = e;
+        installBanner.classList.remove('hidden'); 
+      });
+
+      document.getElementById('pwa-install-btn').addEventListener('click', async () => {
+        installBanner.classList.add('hidden');
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          deferredPrompt = null;
+        }
+      });
+
+      document.getElementById('pwa-close-btn').addEventListener('click', () => {
+        installBanner.classList.add('hidden');
+      });
+
+      // 3. Cookie Consent Logic
+      function checkCookieConsent() {
+        const consent = JSON.parse(localStorage.getItem('bb_cookie_consent'));
+        if (!consent) {
+          document.getElementById('cookie-banner').classList.remove('hidden');
+        } else {
+          applyConsent(consent);
+        }
+      }
+
+      function acceptAllCookies() {
+        const consent = { analytics: true, marketing: true };
+        localStorage.setItem('bb_cookie_consent', JSON.stringify(consent));
+        document.getElementById('cookie-banner').classList.add('hidden');
+        applyConsent(consent);
+      }
+
+      function rejectCookies() {
+        const consent = { analytics: false, marketing: false };
+        localStorage.setItem('bb_cookie_consent', JSON.stringify(consent));
+        document.getElementById('cookie-banner').classList.add('hidden');
+        applyConsent(consent);
+      }
+
+      function openCookieModal() {
+        document.getElementById('cookie-banner').classList.add('hidden');
+        document.getElementById('cookie-modal').classList.remove('hidden');
+        
+        const consent = JSON.parse(localStorage.getItem('bb_cookie_consent')) || { analytics: false, marketing: false };
+        document.getElementById('toggle-analytics').checked = consent.analytics;
+        document.getElementById('toggle-marketing').checked = consent.marketing;
+      }
+
+      function closeCookieModal() {
+        document.getElementById('cookie-modal').classList.add('hidden');
+        if (!localStorage.getItem('bb_cookie_consent')) {
+          document.getElementById('cookie-banner').classList.remove('hidden');
+        }
+      }
+
+      function saveCookiePreferences() {
+        const consent = {
+          analytics: document.getElementById('toggle-analytics').checked,
+          marketing: document.getElementById('toggle-marketing').checked
+        };
+        localStorage.setItem('bb_cookie_consent', JSON.stringify(consent));
+        document.getElementById('cookie-modal').classList.add('hidden');
+        applyConsent(consent);
+      }
+
+      function applyConsent(consent) {
+        if (consent.analytics && !window.gaLoaded) {
+          window.gaLoaded = true;
+          const script = document.createElement('script');
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+          script.async = true;
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', checkCookieConsent);
     </script>
   </body>
 </html>
