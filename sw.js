@@ -3,7 +3,8 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/css/style.css',
-  '/assets/images/BB.png'
+  '/assets/images/BB.png',
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
