@@ -6,26 +6,14 @@
 
     <!-- SEO Optimization -->
     <title>About Us | Beloved Berachah CIC</title>
-    <meta
-      name="description"
-      content="Learn about our vision, objectives, and meet the founder of Beloved Berachah CIC."
-    />
+    <meta name="description" content="Learn about our vision, objectives, and meet the founder of Beloved Berachah CIC." />
     <meta name="author" content="Beloved Berachah CIC" />
 
-    <!-- Preconnect to Google Tag Manager to speed up GA4 -->
+    <!-- Preconnect to Google Tag Manager -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <!-- PWA & Icons -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <link rel="apple-touch-icon" href="assets/images/BB.png" />
     <link rel="icon" type="image/png" href="assets/images/BB.png" />
     <meta name="theme-color" content="#FBBF24" />
@@ -42,593 +30,352 @@
     <!-- Typography (Playfair Display & Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" />
+    </noscript>
 
     <!-- Local Tailwind CSS -->
     <link rel="stylesheet" href="./css/style.css" />
 
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #fafaf9;
-        color: #334155;
-      }
-      .font-serif {
-        font-family: "Playfair Display", serif;
-      }
+      body { font-family: "Inter", sans-serif; background-color: #fafaf9; color: #334155; }
+      .font-serif { font-family: "Playfair Display", serif; }
     </style>
   </head>
 
   <body class="flex flex-col min-h-screen">
+    
+    <!-- PWA Install Prompt (Hidden by Default) -->
+    <div id="pwa-install-banner" class="hidden fixed top-20 inset-x-4 md:left-auto md:right-4 md:w-96 z-50 transition-all duration-500 transform translate-y-0">
+      <div class="bg-slate-900 text-white p-4 rounded-xl shadow-2xl border border-slate-700 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/BB.png" alt="Beloved Berachah Icon" class="w-10 h-10 rounded-md bg-white p-1 object-contain">
+          <div>
+            <p class="font-semibold text-sm">Install Beloved Berachah</p>
+            <p class="text-xs text-slate-300">Add to home screen for offline support</p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button id="pwa-close-btn" class="text-slate-400 hover:text-white text-sm px-2">Cancel</button>
+          <button id="pwa-install-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-900 text-sm font-bold py-1 px-3 rounded transition">Install</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation Bar -->
-    <nav
-      class="bg-white text-slate-800 p-4 sticky top-0 z-50 shadow-sm border-b-4 border-amber-500"
-    >
-      <div
-        class="container mx-auto flex justify-between items-center max-w-6xl"
-      >
-        <a
-          href="index.html"
-          class="flex items-center gap-3 group hover:opacity-80 transition"
-        >
-          <img
-            src="assets/images/BB.png"
-            alt="Beloved Berachah Logo"
-            width="48"
-            height="48"
-            class="h-12 w-12 md:h-14 md:w-14 object-contain"
-          />
-          <span
-            class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1"
-          >
-            Beloved <span class="text-amber-700">Berachah</span>
-          </span>
+    <nav class="bg-white text-slate-800 p-4 sticky top-0 z-40 shadow-sm border-b-4 border-amber-500">
+      <div class="container mx-auto flex justify-between items-center max-w-6xl">
+        <a href="index.html" class="flex items-center gap-3 group hover:opacity-80 transition">
+          <img src="assets/images/BB.png" alt="Beloved Berachah Logo" width="48" height="48" class="h-12 w-12 md:h-14 md:w-14 object-contain" />
+          <span class="font-serif text-slate-900 text-2xl md:text-3xl tracking-tight mt-1">Beloved <span class="text-amber-700">Berachah</span></span>
         </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8 font-medium items-center">
           <a href="index.html" class="hover:text-amber-700 transition">Home</a>
-          <a href="about.html" class="hover:text-amber-700 transition"
-            >About Us</a
-          >
-          <a href="services.html" class="hover:text-amber-700 transition"
-            >Services & Workshops</a
-          >
-          <a href="resources.html" class="hover:text-amber-700 transition"
-            >Resources</a
-          >
-          <a href="contact.html" class="hover:text-amber-700 transition"
-            >Contact</a
-          >
+          <a href="about.html" class="text-amber-700 transition">About Us</a>
+          <a href="services.html" class="hover:text-amber-700 transition">Services & Workshops</a>
+          <a href="resources.html" class="hover:text-amber-700 transition">Resources</a>
+          <a href="contact.html" class="hover:text-amber-700 transition">Contact</a>
+          <a href="donate.html" class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm">Support Us</a>
+        </div>
 
-          <a
-            href="https://www.instagram.com/belovedberachah"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            class="text-slate-400 hover:text-amber-700 transition-colors"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-        <a
-          href="donate.html"
-          class="bg-amber-500 text-slate-900 px-5 py-2 rounded-md font-semibold hover:bg-amber-700 transition shadow-sm"
-          >Support Us</a
-        >
+        <!-- Mobile Hamburger Button -->
+        <button type="button" aria-label="Open mobile menu" class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
       </div>
 
-      <!-- Mobile Hamburger Button -->
-      <button
-        type="button"
-        aria-label="Open mobile menu"
-        class="md:hidden text-slate-800 focus:outline-none hover:text-amber-700 transition"
-      >
-        <svg
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </button>
-    </div>
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2">
+        <a href="index.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Home</a>
+        <a href="about.html" class="block px-4 py-3 text-amber-700 bg-amber-50 rounded-xl font-medium">About Us</a>
+        <a href="services.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Services & Workshops</a>
+        <a href="resources.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Resources</a>
+        <a href="contact.html" class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium">Contact</a>
+        <a href="donate.html" class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm">Support Us</a>
+      </div>
+    </nav>
 
-    <!-- Mobile Dropdown Menu (Hidden by default) -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden container mx-auto max-w-6xl border-t border-slate-100 mt-4 pt-4 pb-2 space-y-2 px-2"
-    >
-      <a
-        href="index.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Home</a
-      >
-      <a
-        href="about.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >About Us</a
-      >
-      <a
-        href="services.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Services & Workshops</a
-      >
-      <a
-        href="resources.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Resources</a
-      >
-      <a
-        href="contact.html"
-        class="block px-4 py-3 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-xl font-medium"
-        >Contact</a
-      >
-      <a
-        href="donate.html"
-        class="block px-4 py-3 mt-4 text-center bg-amber-500 text-slate-900 font-semibold rounded-xl shadow-sm"
-        >Support Us</a
-      >
-    </div>
-  </nav>
+    <!-- Inner Page Header -->
+    <header class="bg-slate-900 py-20 md:py-24 border-b-4 border-amber-500">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-tight drop-shadow-sm">
+          About <span class="text-amber-400 font-medium">Us</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 font-light tracking-wide">
+          Discover the heart, vision, and people behind Beloved Berachah.
+        </p>
+      </div>
+    </header>
 
-  <!-- Inner Page Header -->
-  <header class="bg-slate-900 py-20 md:py-24 border-b-4 border-amber-500">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1
-        class="text-5xl md:text-7xl font-serif text-white mb-6 tracking-tight drop-shadow-sm"
-      >
-        Our <span class="text-amber-400 font-medium">Story</span>
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 font-light tracking-wide">
-        Discover the heart, vision, and people behind Beloved Berachah.
-      </p>
-    </div>
-  </header>
+    <!-- Main Content -->
+    <main class="grow py-24 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        
+        <!-- Our Vision & Objectives Section -->
+        <section class="mb-24">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            
+            <!-- Text Content -->
+            <div>
+              <h2 class="text-4xl md:text-5xl font-serif text-slate-900 mb-8 tracking-tight">
+                Our <span class="text-amber-700 font-medium">Vision</span>
+              </h2>
+              <div class="prose prose-slate prose-lg text-slate-600 font-light leading-relaxed">
+                <p class="mb-6">
+                  Beloved Berachah CIC was founded to bring hope, healing, and restoration to women whose lives have been impacted by trauma, addiction, domestic abuse, and mental health challenges.
+                </p>
+                <p class="mb-6">
+                  Our vision is to see women empowered to overcome adversity, rediscover their true value and identity, and move forward into healthier, more fulfilling lives.
+                </p>
+                <p class="mb-10">
+                  We believe that every woman should have access to compassionate support, understanding, and opportunities for healing, recovery, and personal growth.
+                </p>
 
-  <!-- Main Content -->
-  <main class="grow py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <!-- Our Vision Section -->
-      <section class="mb-24">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <!-- Text Content -->
-          <div>
-            <h2
-              class="text-4xl md:text-5xl font-serif text-slate-900 mb-8 tracking-tight"
-            >
-              Our <span class="text-amber-700 font-medium">Vision</span>
-            </h2>
-            <div
-              class="prose prose-slate prose-lg text-slate-600 font-light leading-relaxed"
-            >
-              <p class="mb-6">
-                Beloved Berachah CIC was founded to bring hope, healing, and
-                restoration to women whose lives have been impacted by trauma,
-                addiction, domestic abuse, and mental health challenges.
-              </p>
-              <p class="mb-6">
-                Our vision is to see women empowered to overcome adversity,
-                rediscover their true value and identity, and move forward
-                into healthier, more fulfilling lives.
-              </p>
-              <p class="mb-10">
-                We believe that every woman should have access to
-                compassionate support, understanding, and opportunities for
-                healing, recovery, and personal growth.
-              </p>
+                <!-- Social Objectives List -->
+                <h3 class="text-2xl font-serif font-medium text-slate-900 mb-6 tracking-tight">Our Social Objectives</h3>
+                <p class="mb-4 text-slate-600 font-light">Our objectives are to:</p>
+                <ul class="space-y-4 text-slate-700">
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Raise awareness of the impact of trauma, addiction, domestic abuse, and mental health challenges.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Educate communities, faith groups, charities, and organisations across the public and private sectors about trauma, recovery, and trauma-informed approaches.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Reduce stigma and encourage open conversations around mental health and addiction.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Promote resilience, recovery, and wellbeing.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Signpost women to relevant support services and resources.</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-amber-700 mr-3 mt-1 shrink-0"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
+                    <span>Develop initiatives that empower women to rebuild their lives and achieve their potential.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-              <!-- Custom Styled Objectives List -->
-              <h3
-                class="text-2xl font-serif font-medium text-slate-900 mb-6 tracking-tight"
-              >
-                Our Social Objectives
-              </h3>
-              <ul class="space-y-4 text-slate-700">
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    >Raise awareness of the impact of trauma, addiction,
-                    domestic abuse, and mental health challenges.</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    >Educate communities, faith groups, charities, and
-                    organisations across the public and private sectors about
-                    trauma, recovery, and trauma-informed approaches.</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    >Reduce stigma and encourage open conversations around
-                    mental health and addiction.</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span>Promote resilience, recovery, and wellbeing.</span>
-                </li>
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    >Signpost women to relevant support services and
-                    resources.</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <span class="text-amber-700 mr-3 mt-1 shrink-0">
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    >Develop initiatives that empower women to rebuild their
-                    lives and achieve their potential.</span
-                  >
-                </li>
-              </ul>
+            <!-- Vision Image Container (Canonical classes applied) -->
+            <div class="rounded-2xl overflow-hidden shadow-sm relative group h-full min-h-75 lg:min-h-125 mt-8 lg:mt-0">
+              <div class="absolute inset-0 bg-amber-600/10 mix-blend-multiply z-10 transition duration-500 group-hover:bg-transparent"></div>
+              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=400&q=50" alt="Women in a supportive community" class="w-full h-full object-cover absolute inset-0 transform transition duration-700 group-hover:scale-105" />
             </div>
           </div>
+        </section>
 
-          <!-- Vision Image Container -->
-          <div
-            class="rounded-2xl overflow-hidden shadow-sm relative group h-full min-h-75 lg:min-h-100 mt-8 lg:mt-0"
-          >
-            <div
-              class="absolute inset-0 bg-amber-600/10 mix-blend-multiply z-10 transition duration-500 group-hover:bg-transparent"
-            ></div>
-            <!-- Compressed Working Image of diverse women in a support circle -->
-            <img
-              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=400&q=50"
-              alt="Women in a supportive community"
-              class="w-full h-full object-cover absolute inset-0 transform transition duration-700 group-hover:scale-105"
-            />
-          </div>
-        </div>
-      </section>
+        <!-- Elegant Divider -->
+        <div class="w-16 h-1 bg-amber-600 mx-auto mb-24 rounded-full"></div>
 
-      <!-- The Story Behind Our Name -->
-      <section
-        class="my-24 bg-amber-50 rounded-3xl p-10 md:p-16 border border-amber-100 relative overflow-hidden"
-      >
-        <!-- Decorative Background Accent -->
-        <div
-          class="absolute -right-20 -top-20 w-64 h-64 bg-amber-200/30 rounded-full blur-3xl"
-        ></div>
+        <!-- Meet Brenda Section -->
+        <section class="mb-24">
+          <div class="bg-amber-50/50 rounded-3xl p-8 md:p-16 border border-amber-100 flex flex-col md:flex-row gap-12 items-center">
+            
+            <!-- Brenda Portrait -->
+            <div class="w-56 h-56 md:w-72 md:h-72 shrink-0 rounded-full overflow-hidden border-8 border-white shadow-sm flex items-center justify-center">
+              <img src="assets/images/brenda fraser.jpg" alt="Brenda Fraser" width="300" height="300" class="w-full h-full object-cover scale-105" fetchpriority="high" />
+            </div>
 
-        <div class="relative z-10 text-center max-w-4xl mx-auto">
-          <h2
-            class="text-3xl md:text-4xl font-serif text-slate-900 mb-6 tracking-tight"
-          >
-            The Story Behind Our Name
-          </h2>
-          <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
-
-          <p
-            class="text-slate-600 text-lg leading-relaxed font-light mb-12 max-w-2xl mx-auto"
-          >
-            Our name brings together two powerful biblical promises: that
-            every woman’s true identity is deeply loved, and that even the
-            darkest valleys of trauma can be transformed into places of
-            restoration and provision.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
-            <!-- Quote 1: Beloved -->
-            <blockquote
-              class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100"
-            >
-              <p
-                class="text-xl font-serif text-slate-800 italic leading-relaxed mb-6"
-              >
-                "I will call them 'my people' who are not my people; and I
-                will call her 'my beloved' who is not my beloved."
-              </p>
-              <footer
-                class="text-xs font-semibold text-amber-700 uppercase tracking-widest flex items-center"
-              >
-                <span class="w-4 h-px bg-amber-600 mr-2"></span> Romans 9:25
-              </footer>
-            </blockquote>
-
-            <!-- Quote 2: Berachah -->
-            <blockquote
-              class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100"
-            >
-              <p
-                class="text-xl font-serif text-slate-800 italic leading-relaxed mb-6"
-              >
-                "On the fourth day they assembled in the Valley of Berachah,
-                where they blessed the Lord..."
-              </p>
-              <footer
-                class="text-xs font-semibold text-amber-700 uppercase tracking-widest flex items-center"
-              >
-                <span class="w-4 h-px bg-amber-600 mr-2"></span> 2 Chronicles
-                20:26
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <!-- Elegant Divider -->
-      <div class="w-16 h-1 bg-amber-600 mx-auto mb-24 rounded-full"></div>
-
-      <!-- Meet Brenda Section -->
-      <section>
-        <div
-          class="bg-amber-50/50 rounded-3xl p-8 md:p-16 border border-amber-100 flex flex-col md:flex-row gap-12 items-center"
-        >
-          <!-- Real Local Portrait -->
-          <div
-            class="w-56 h-56 md:w-72 md:h-72 shrink-0 rounded-full overflow-hidden border-8 border-white shadow-sm flex items-center justify-center"
-          >
-            <img
-              src="assets/images/brenda fraser.jpg"
-              alt="Brenda Fraser"
-              width="300"
-              height="300"
-              class="w-full h-full object-cover scale-105"
-              fetchpriority="high"
-            />
-          </div>
-
-          <!-- Bio Text -->
-          <div>
-            <span
-              class="text-amber-700 font-semibold uppercase tracking-wider text-sm mb-3 block"
-              >Founder & Director</span
-            >
-            <h2
-              class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight"
-            >
-              Meet
-              <span class="text-amber-700 font-medium">Brenda Fraser</span>
-            </h2>
-            <div
-              class="text-slate-600 text-lg leading-relaxed font-light space-y-5"
-            >
-              <p>
-                Brenda Fraser is the Founder and Director of Beloved Berachah.
-              </p>
-              <p>
-                Brenda is passionate about helping women understand the
-                underlying causes and impact of trauma and addiction. Drawing
-                on both her lived experience and professional knowledge, she
-                encourages and supports women on their journey towards
-                healing, recovery, and lasting restoration.
-              </p>
-              <p>
-                Through speaking engagements, workshops, and community
-                outreach, Brenda shares her personal testimony alongside
-                practical insights that educate, inspire, and empower
-                audiences. Her work is driven by a desire to see women break
-                free from shame, discover hope, and experience lasting
-                transformation.
-              </p>
-              <p>
-                Brenda’s unique combination of lived experience, resilience,
-                faith, and professional knowledge enables her to connect
-                authentically with diverse audiences and communities.
-              </p>
+            <!-- Bio Text -->
+            <div>
+              <span class="text-amber-700 font-semibold uppercase tracking-wider text-sm mb-3 block">Founder & Director</span>
+              <h2 class="text-4xl md:text-5xl font-serif text-slate-900 mb-6 tracking-tight">Meet <span class="text-amber-700 font-medium">Brenda Fraser</span></h2>
+              <div class="text-slate-600 text-lg leading-relaxed font-light space-y-5">
+                <p>Brenda Fraser is the Founder and Director of Beloved Berachah.</p>
+                <p>Brenda is passionate about helping women understand the underlying causes and impact of trauma and addiction. Drawing on both her lived experience and professional knowledge, she encourages and supports women on their journey towards healing, recovery, and lasting restoration.</p>
+                <p>Through speaking engagements, workshops, and community outreach, Brenda shares her personal testimony alongside practical insights that educate, inspire, and empower audiences. Her work is driven by a desire to see women break free from shame, discover hope, and experience lasting transformation.</p>
+                <p>Brenda’s unique combination of lived experience, resilience, faith, and professional knowledge enables her to connect authentically with diverse audiences and communities.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </main>
+        </section>
 
-  <!-- Footer Section -->
-  <footer
-    class="bg-slate-900 text-slate-300 py-12 mt-auto border-t-4 border-amber-500"
-  >
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Our Values Section -->
+        <section class="mb-24">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-serif text-slate-900 mb-4 tracking-tight">Our <span class="text-amber-700">Values</span></h2>
+            <div class="w-12 h-1 bg-amber-600 mx-auto rounded-full"></div>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center hover:shadow-md transition">
+              <h3 class="text-xl font-serif text-amber-700 mb-3">Compassion</h3>
+              <p class="text-slate-600 text-sm font-light leading-relaxed">We treat every individual with dignity, empathy, and respect.</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center hover:shadow-md transition">
+              <h3 class="text-xl font-serif text-amber-700 mb-3">Hope</h3>
+              <p class="text-slate-600 text-sm font-light leading-relaxed">We believe recovery and positive change are possible for everyone.</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center hover:shadow-md transition">
+              <h3 class="text-xl font-serif text-amber-700 mb-3">Empowerment</h3>
+              <p class="text-slate-600 text-sm font-light leading-relaxed">We encourage women to recognise their strengths and realise their potential.</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center hover:shadow-md transition">
+              <h3 class="text-xl font-serif text-amber-700 mb-3">Integrity</h3>
+              <p class="text-slate-600 text-sm font-light leading-relaxed">We operate with honesty, transparency, and accountability.</p>
+            </div>
+            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center hover:shadow-md transition">
+              <h3 class="text-xl font-serif text-amber-700 mb-3">Community</h3>
+              <p class="text-slate-600 text-sm font-light leading-relaxed">We believe healing is strengthened through supportive relationships and meaningful connections.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="mb-24 bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-serif text-slate-900 mb-6">Our Team</h2>
+            <div class="w-12 h-1 bg-amber-600 mx-auto mb-8 rounded-full"></div>
+            <div class="text-slate-600 text-lg leading-relaxed font-light space-y-6">
+              <p>Beloved Berachah CIC is led by Brenda Fraser and supported by trustees, volunteers, partners, and supporters who share our commitment to helping women affected by trauma, addiction, domestic abuse, and mental health challenges.</p>
+              <p>As Beloved Berachah CIC grows, we plan to expand our team of trustees, volunteers, and partners, enabling us to increase our reach and deepen our impact within local communities and across the public, private, voluntary, and faith sectors.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Long-Term Vision Section -->
+        <section>
+          <div class="bg-slate-900 rounded-3xl p-10 md:p-16 text-white text-center relative overflow-hidden shadow-xl">
+            <!-- Decorative accents -->
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto">
+              <h2 class="text-4xl font-serif mb-6">Our Long-Term Vision</h2>
+              <div class="w-12 h-1 bg-amber-500 mx-auto mb-8 rounded-full"></div>
+              
+              <div class="text-slate-300 text-lg leading-relaxed font-light space-y-6 text-left">
+                <p>Our long-term vision is to establish Beloved Berachah CIC as a trusted organisation that provides education, support, advocacy, and community-based initiatives for women affected by trauma and adversity.</p>
+                <p>Through collaboration with churches, charities, statutory services, community organisations, and partners across the public and private sectors, Beloved Berachah CIC aims to expand access to hope, healing, and restoration for women affected by trauma, addiction, domestic abuse, and mental health challenges.</p>
+                <p>We are committed to developing programmes, educational resources, workshops, support networks, and strategic partnerships that enable women to access the support, guidance, and opportunities they need to heal, recover, and thrive.</p>
+                <p>By working collaboratively across the faith, voluntary, statutory, public, and private sectors, we seek to create lasting positive change, strengthen communities, and improve outcomes for the women we serve. Together, we can help women move from surviving to thriving.</p>
+                
+                <div class="mt-8 p-6 bg-amber-500/10 border border-amber-500/30 rounded-2xl">
+                  <p class="text-white font-medium text-xl mb-2 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    The 2027 Rehabilitation Centre Goal
+                  </p>
+                  <p class="text-slate-300 text-base">As Beloved Berachah CIC grows, our vision is to establish a specialist rehabilitation centre by 2027, providing long-term, trauma-informed support for women affected by addiction, trauma, and mental health challenges. The centre will offer a safe, compassionate environment where women can heal, rebuild their lives, and move forward with renewed hope, dignity, and purpose.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-auto border-t border-slate-800">
+      <div class="container mx-auto px-4 max-w-6xl grid md:grid-cols-3 gap-8 text-center md:text-left">
         <div class="md:col-span-1">
-          <h3 class="text-white text-xl font-serif mb-4 tracking-tight">
-            Beloved Berachah
-          </h3>
-          <p class="text-sm leading-relaxed mb-4">
-            Providing hope, healing, and restoration for women affected by
-            trauma and adversity.
-          </p>
-          <p class="text-xs text-slate-400">
-            Registered Community Interest Company<br />Company No: 16685295
+          <h3 class="text-white text-2xl font-serif mb-4 tracking-tight">Beloved Berachah CIC</h3>
+          <p class="text-sm leading-relaxed mb-4 text-slate-400">
+            Supporting women affected by trauma, addiction, domestic abuse, and mental health challenges.
           </p>
         </div>
         <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Quick Links
-          </h3>
-          <ul class="space-y-3 text-sm">
-            <li>
-              <a href="about.html" class="hover:text-amber-400 transition"
-                >About Us & Vision</a
-              >
-            </li>
-            <li>
-              <a href="services.html" class="hover:text-amber-400 transition"
-                >Services & Workshops</a
-              >
-            </li>
-            <li>
-              <a href="resources.html" class="hover:text-amber-400 transition"
-                >Resources</a
-              >
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-amber-400 transition"
-                >Contact & Support</a
-              >
-            </li>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Legal & Registration</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li>Company Number: 16685295</li>
+            <li>Registered in England and Wales.</li>
+            <li>Registered Office: [Insert Address]</li>
           </ul>
         </div>
         <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Contact
-          </h3>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Links & Contact</h3>
           <ul class="space-y-3 text-sm">
-            <li>London, SW15 6XQ</li>
-            <li>
-              <a
-                href="tel:07795907776"
-                class="hover:text-amber-400 transition"
-                >07795907776</a
-              >
-            </li>
-            <li>
-              <a
-                href="mailto:hello@belovedberachah.org"
-                class="hover:text-amber-400 transition"
-                >Email Us</a
-              >
-            </li>
+            <li><a href="mailto:beloved@berachah.org.uk" class="text-amber-400 hover:text-amber-300 transition font-medium">beloved@berachah.org.uk</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+            <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="cookies.html" class="hover:text-white transition">Cookie Policy</a></li>
+            <li><button onclick="openCookieModal()" class="hover:text-white transition underline cursor-pointer">Manage Cookies</button></li>
           </ul>
-        </div>
-        <div>
-          <h3
-            class="text-white text-sm font-semibold uppercase tracking-wider mb-4"
-          >
-            Newsletter
-          </h3>
-          <p class="text-sm mb-4">
-            Join our mailing list for updates on workshops and community
-            events.
-          </p>
-          <form class="flex flex-col gap-3">
-            <input
-              type="email"
-              placeholder="Email address"
-              class="bg-slate-800 border border-slate-700 text-white px-4 py-2 rounded focus:outline-none focus:border-amber-500 text-sm"
-              required
-            />
-            <button
-              type="submit"
-              class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-2 px-4 rounded transition text-sm"
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
       </div>
-      <div
-        class="pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center"
-      >
+      <div class="container mx-auto px-4 max-w-6xl mt-12 pt-8 border-t border-slate-800 text-sm text-slate-500 text-center">
         <p>&copy; 2026 Beloved Berachah CIC. All rights reserved.</p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="privacy.html" class="hover:text-slate-300 transition"
-            >Privacy Policy</a
-          >
-          <a href="safeguarding.html" class="hover:text-slate-300 transition"
-            >Safeguarding</a
-          >
+      </div>
+    </footer>
+
+    <!-- Cookie Consent Banner & Modal -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 w-full z-60 bg-slate-900 text-white p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t-4 border-amber-500">
+      <div class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm text-slate-300 max-w-3xl">
+          We use cookies to improve your experience, analyse website traffic, and support marketing activity. You can accept, reject, or manage your preferences at any time. Please see our <a href="privacy.html" class="text-amber-500 hover:text-amber-400 underline">Privacy Policy</a> for further information.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
+          <button onclick="acceptAllCookies()" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-2 px-6 rounded transition text-sm">Accept All</button>
+          <button onclick="rejectCookies()" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold py-2 px-6 rounded transition text-sm">Reject</button>
+          <button onclick="openCookieModal()" class="bg-transparent border border-slate-500 hover:border-white text-white font-semibold py-2 px-6 rounded transition text-sm">Manage</button>
         </div>
       </div>
     </div>
-  </footer>
-  <script>
-    const btn = document.querySelector(
-      'button[aria-label="Open mobile menu"]',
-    );
-    const menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  </script>
-</body>
+
+    <div id="cookie-modal" class="hidden fixed inset-0 z-70 bg-black bg-opacity-75">
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 text-slate-900 relative">
+          <h3 class="text-xl font-serif mb-2">Cookie Preferences</h3>
+          <p class="text-sm text-slate-600 mb-6">Manage how we use cookies on your device.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+              <div><p class="font-semibold text-sm">Essential Cookies</p></div>
+              <span class="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Always ON</span>
+            </div>
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+              <div class="pr-4"><p class="font-semibold text-sm">Analytics Cookies</p></div>
+              <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                <input type="checkbox" id="toggle-analytics" aria-label="Enable Analytics Cookies" class="sr-only peer">
+                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+              </label>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="pr-4"><p class="font-semibold text-sm">Marketing Cookies</p></div>
+              <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                <input type="checkbox" id="toggle-marketing" aria-label="Enable Marketing Cookies" class="sr-only peer">
+                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+              </label>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <button onclick="saveCookiePreferences()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded transition">Save Preferences</button>
+            <button onclick="closeCookieModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3 rounded transition">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Javascript Logic -->
+    <script>
+      const btn = document.querySelector('button[aria-label="Open mobile menu"]');
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+      let deferredPrompt;
+      const installBanner = document.getElementById('pwa-install-banner');
+      window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; installBanner.classList.remove('hidden'); });
+      document.getElementById('pwa-install-btn').addEventListener('click', async () => { installBanner.classList.add('hidden'); if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; deferredPrompt = null; }});
+      document.getElementById('pwa-close-btn').addEventListener('click', () => installBanner.classList.add('hidden'));
+
+      function checkCookieConsent() { const consent = JSON.parse(localStorage.getItem('bb_cookie_consent')); if (!consent) { document.getElementById('cookie-banner').classList.remove('hidden'); } else { applyConsent(consent); } }
+      function acceptAllCookies() { const consent = { analytics: true, marketing: true }; localStorage.setItem('bb_cookie_consent', JSON.stringify(consent)); document.getElementById('cookie-banner').classList.add('hidden'); applyConsent(consent); }
+      function rejectCookies() { const consent = { analytics: false, marketing: false }; localStorage.setItem('bb_cookie_consent', JSON.stringify(consent)); document.getElementById('cookie-banner').classList.add('hidden'); applyConsent(consent); }
+      function openCookieModal() { document.getElementById('cookie-banner').classList.add('hidden'); document.getElementById('cookie-modal').classList.remove('hidden'); const consent = JSON.parse(localStorage.getItem('bb_cookie_consent')) || { analytics: false, marketing: false }; document.getElementById('toggle-analytics').checked = consent.analytics; document.getElementById('toggle-marketing').checked = consent.marketing; }
+      function closeCookieModal() { document.getElementById('cookie-modal').classList.add('hidden'); if (!localStorage.getItem('bb_cookie_consent')) { document.getElementById('cookie-banner').classList.remove('hidden'); } }
+      function saveCookiePreferences() { const consent = { analytics: document.getElementById('toggle-analytics').checked, marketing: document.getElementById('toggle-marketing').checked }; localStorage.setItem('bb_cookie_consent', JSON.stringify(consent)); document.getElementById('cookie-modal').classList.add('hidden'); applyConsent(consent); }
+      function applyConsent(consent) { if (consent.analytics && !window.gaLoaded) { window.gaLoaded = true; const script = document.createElement('script'); script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; script.async = true; document.head.appendChild(script); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX'); } }
+      window.addEventListener('DOMContentLoaded', checkCookieConsent);
+    </script>
+  </body>
 </html>
