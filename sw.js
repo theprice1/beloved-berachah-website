@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bb-cache-v4';
+const CACHE_NAME = 'bb-cache-v6';
 
 self.addEventListener('install', (e) => {
   self.skipWaiting(); // Force the waiting service worker to become the active service worker
